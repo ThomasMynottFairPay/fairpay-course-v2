@@ -18,7 +18,7 @@ module.exports = async (req, res) => {
         const parsedMessages = Array.isArray(messages) ? messages : [{ role: 'user', content: messages }];
 
         const msg = await anthropic.messages.create({
-            model: "claude-3-5-sonnet-20241022",
+            model: "claude-2.1",
             max_tokens: 1000,
             system: systemPrompt,
             messages: parsedMessages,
