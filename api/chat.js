@@ -2,7 +2,7 @@ const Anthropic = require('@anthropic-ai/sdk');
 const { corpus } = require('./custom_corpus.js');
 
 const anthropic = new Anthropic({
-    apiKey: process.env.ANTHROPIC_API_KEY,
+    apiKey: (process.env.ANTHROPIC_API_KEY || '').trim(),
 });
 
 module.exports = async (req, res) => {
