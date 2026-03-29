@@ -1,5 +1,5 @@
 # Week 1 Audio Prep: Foundations & Ecosystem Mapping
-## FairPay CEO Payments Course
+## FairPay Payments Foundations Course
 
 **Duration:** 18-20 minutes  
 **Purpose:** Listen before starting Week 1 to prime your mental models  
@@ -9,7 +9,7 @@
 
 ### INTRO [0:00-1:30]
 
-Welcome to the FairPay CEO Payments Course. I'm going to be your guide through the Australian payments landscape—and by the end of this six-week journey, you'll have a complete strategy pack for building a PayTo collections business.
+Welcome to the FairPay Payments Foundations Course. I'm going to be your guide through the Australian payments landscape—and by the end of this six-week journey, you'll have a complete strategy pack for building a PayTo collections business.
 
 Before you dive into any reading or exercises, I want to use this audio to prime your thinking. We'll cover the three core concepts you need to understand, introduce the key institutions you'll encounter, and give you a framework for where FairPay fits in this ecosystem.
 

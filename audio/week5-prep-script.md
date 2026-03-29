@@ -1,5 +1,5 @@
 # Week 5 Audio Prep: Fraud, Economics & Integration
-## FairPay CEO Payments Course
+## FairPay Payments Foundations Course
 
 **Duration:** 17-19 minutes  
 **Purpose:** Listen before starting Week 5 to understand risk, pricing, and operations  

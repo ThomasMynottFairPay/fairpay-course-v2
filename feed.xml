@@ -5,10 +5,10 @@
      xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <!-- CHANNEL INFO - UPDATE THESE VALUES -->
-    <title>FairPay CEO Payments Course</title>
+    <title>FairPay Payments Foundations Course</title>
     <link>https://your-domain.com/course</link>
     <atom:link href="https://your-domain.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <description>A six-week audio preparation series for the FairPay CEO Payments Course. Each episode provides a 15-20 minute overview of the week's content—perfect for commute listening before you dive into the full materials.</description>
+    <description>A six-week audio preparation series for the FairPay Payments Foundations Course. Each episode provides a 15-20 minute overview of the week's content—perfect for commute listening before you dive into the full materials.</description>
     <language>en-au</language>
     <copyright>© 2026 FairPay</copyright>
     <lastBuildDate>Mon, 24 Mar 2026 00:00:00 +1100</lastBuildDate>
@@ -16,7 +16,7 @@
     
     <!-- ITUNES-SPECIFIC TAGS FOR SPOTIFY/APPLE PODCASTS -->
     <itunes:author>FairPay</itunes:author>
-    <itunes:summary>A six-week audio preparation series for the FairPay CEO Payments Course. Each episode provides a 15-20 minute overview of the week's content—perfect for commute listening before you dive into the full materials.</itunes:summary>
+    <itunes:summary>A six-week audio preparation series for the FairPay Payments Foundations Course. Each episode provides a 15-20 minute overview of the week's content—perfect for commute listening before you dive into the full materials.</itunes:summary>
     <itunes:owner>
       <itunes:name>FairPay</itunes:name>
       <itunes:email>podcast@your-domain.com</itunes:email>
@@ -34,7 +34,7 @@
     <!-- COVER IMAGE (1400x1400 to 3000x3000 required for Apple/Spotify) -->
     <image>
       <url>https://your-domain.com/podcast-cover.jpg</url>
-      <title>FairPay CEO Payments Course</title>
+      <title>FairPay Payments Foundations Course</title>
       <link>https://your-domain.com/course</link>
     </image>
 

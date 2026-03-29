@@ -1,5 +1,5 @@
 # Week 2 Audio Prep: Rails Selection & Account-to-Account
-## FairPay CEO Payments Course
+## FairPay Payments Foundations Course
 
 **Duration:** 17-19 minutes  
 **Purpose:** Listen before starting Week 2 to understand the rail selection framework  

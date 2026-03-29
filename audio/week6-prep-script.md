@@ -1,5 +1,5 @@
 # Week 6 Audio Prep: Partnerships, Trends & Capstone
-## FairPay CEO Payments Course
+## FairPay Payments Foundations Course
 
 **Duration:** 15-17 minutes  
 **Purpose:** Listen before starting Week 6 to understand partnerships and prepare your capstone  

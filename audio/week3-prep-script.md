@@ -1,5 +1,5 @@
 # Week 3 Audio Prep: Cards & Processing Stack
-## FairPay CEO Payments Course
+## FairPay Payments Foundations Course
 
 **Duration:** 16-18 minutes  
 **Purpose:** Listen before starting Week 3 to understand card economics and architecture decisions  

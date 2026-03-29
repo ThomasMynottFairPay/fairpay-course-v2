@@ -1,5 +1,5 @@
 # Week 4 Audio Prep: Standards & Regulatory Mapping
-## FairPay CEO Payments Course
+## FairPay Payments Foundations Course
 
 **Duration:** 18-20 minutes  
 **Purpose:** Listen before starting Week 4 to understand compliance landscape  
