@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 2: Rails Selection & A2A | FairPay CEO Course</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#ffffff;--card:#f8fafc;--elevated:#f1f5f9;--teal:#14b8a6;--teal-dim:rgba(20,184,166,.15);--orange:#f97316;--text:#0f172a;--text2:#475569;--muted:#64748b;--border:#e2e8f0;--success:#22c55e}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+.nav{position:sticky;top:0;background:rgba(255,255,255,.95);border-bottom:1px solid var(--border);padding:1rem 2rem;display:flex;justify-content:space-between}
+.nav a{color:var(--text2);text-decoration:none}.nav a:hover{color:var(--teal)}
+.hero{padding:3rem 2rem;background:linear-gradient(180deg,rgba(20,184,166,.08),transparent);border-bottom:1px solid var(--border);text-align:center}
+.week-label{display:inline-block;font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);background:var(--teal-dim);padding:.5rem 1rem;border-radius:2rem;margin-bottom:1rem}
+h1{font-family:'Instrument Serif',serif;font-size:2.5rem;margin-bottom:1rem}
+.subtitle{color:var(--text2);max-width:700px;margin:0 auto}
+.container{max-width:900px;margin:0 auto;padding:2rem}
+.section{margin-bottom:3rem}
+h2{font-family:'Instrument Serif',serif;font-size:1.5rem;margin-bottom:1rem;color:var(--teal)}
+h3{font-size:1.1rem;margin:1.5rem 0 .75rem}
+p{margin-bottom:1rem;color:var(--text2)}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.5rem;margin-bottom:1rem}
+.concept{background:var(--elevated);border-left:3px solid var(--teal);padding:1rem;margin-bottom:1rem;border-radius:0 8px 8px 0}
+.concept b{color:var(--teal)}
+table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.9rem}
+th,td{padding:.75rem;text-align:left;border:1px solid var(--border)}
+th{background:var(--elevated);color:var(--teal)}
+td{color:var(--text2)}
+.resource{display:block;padding:1rem;background:var(--elevated);border:1px solid var(--border);border-radius:8px;margin-bottom:.5rem;text-decoration:none;color:var(--text)}
+.resource:hover{border-color:var(--teal)}
+.resource small{color:var(--muted)}
+.quiz{margin-top:1rem}
+.q{margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}
+.q:last-child{border:none}
+.q-text{font-weight:500;margin-bottom:.75rem}
+.opts label{display:block;padding:.5rem .75rem;margin:.25rem 0;background:var(--elevated);border:1px solid var(--border);border-radius:6px;cursor:pointer}
+.opts label:hover{border-color:var(--teal)}
+.opts input{margin-right:.5rem}
+.btn{background:var(--teal);color:#fff;border:none;padding:.75rem 1.5rem;border-radius:8px;cursor:pointer;font-weight:600;margin-top:1rem}
+#result{margin-top:1rem;padding:1rem;border-radius:8px;display:none}
+.deliverable{background:linear-gradient(135deg,rgba(20,184,166,.1),rgba(20,184,166,.02));border:1px solid var(--teal);border-radius:12px;padding:1.5rem}
+.checklist{list-style:none;padding:0}
+.checklist li{padding:.5rem 0;border-bottom:1px solid var(--border);color:var(--text2)}
+.checklist li:last-child{border:none}
+.nav-footer{display:flex;justify-content:space-between;margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border)}
+.nav-btn{padding:.75rem 1.5rem;background:var(--card);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text2)}
+.nav-btn:hover{border-color:var(--teal);color:var(--text)}
+</style>
+</head>
+<body>
+<nav class="nav"><a href="week1.html">← Week 1</a><span style="color:var(--text);font-weight:600">Week 2 of 6</span><a href="week3.html">Week 3 →</a></nav>
+
+<header class="hero">
+<span class="week-label">Week 2</span>
+<h1>Rails Selection & Account-to-Account</h1>
+<p class="subtitle">Deep dive into NPP, PayTo, and BECS. Build your rail decision matrix.</p>
+</header>
+
+<div class="container">
+
+<section class="section">
+<h2>Learning Objectives</h2>
+<div class="card">
+<ul style="color:var(--text2);padding-left:1.5rem">
+<li>Apply an 8-criteria framework for rail selection</li>
+<li>Understand NPP architecture and PayTo agreement lifecycle</li>
+<li>Explain BECS limitations and transition uncertainty</li>
+<li>Build a rail decision matrix for FairPay use cases</li>
+<li>Create an A2A roadmap balancing PayTo-first with BECS compatibility</li>
+</ul>
+</div>
+</section>
+
+<section class="section">
+<h2>Rail Selection Framework</h2>
+<p>Eight criteria for comparing payment rails:</p>
+
+<div class="concept"><b>1. Availability</b> — When can transactions happen? NPP is 24/7/365 real-time. BECS is batch (days). Cards are near real-time.</div>
+<div class="concept"><b>2. Data Richness</b> — What information travels with payment? NPP uses ISO 20022 (rich, structured). BECS has 18 characters. Big difference for reconciliation.</div>
+<div class="concept"><b>3. Authorization Model</b> — How does payer consent? PayTo: bank app agreements. BECS: DDR forms. Cards: card-on-file.</div>
+<div class="concept"><b>4. Reversibility</b> — Can payments be reversed? Cards: chargebacks (months). BECS: indemnity claims. PayTo: final once settled.</div>
+<div class="concept"><b>5. Fraud Posture</b> — Where does fraud risk sit? Cards have high CNP fraud ($816M in 2024). PayTo shifts model—customer authorizes with bank security.</div>
+<div class="concept"><b>6. Integration Burden</b> — How hard to build/maintain? Cards: mature SDKs. BECS: batch files. NPP/PayTo: newer, evolving APIs.</div>
+<div class="concept"><b>7. Unit Economics</b> — Cost per transaction? Cards: interchange + scheme fees + acquirer margin. BECS: very cheap. PayTo: low-moderate.</div>
+<div class="concept"><b>8. Access Constraints</b> — How do you get on? All require sponsor/partner relationships.</div>
+</section>
+
+<section class="section">
+<h2>Rail Comparison Matrix</h2>
+<div style="overflow-x:auto">
+<table>
+<tr><th>Criteria</th><th>NPP / PayTo</th><th>BECS</th><th>Cards (CNP)</th></tr>
+<tr><td>Availability</td><td>24/7 real-time</td><td>Batch (days)</td><td>Near real-time</td></tr>
+<tr><td>Data</td><td>ISO 20022 rich</td><td>18 chars</td><td>Moderate</td></tr>
+<tr><td>Authorization</td><td>Bank app</td><td>DDR forms</td><td>Card-on-file</td></tr>
+<tr><td>Reversibility</td><td>Final</td><td>Indemnity claims</td><td>Chargebacks</td></tr>
+<tr><td>Fraud profile</td><td>Customer controls</td><td>Unauthorized risk</td><td>High CNP</td></tr>
+<tr><td>Cost</td><td>Low-moderate</td><td>Very low</td><td>High</td></tr>
+</table>
+</div>
+</section>
+
+<section class="section">
+<h2>NPP & PayTo Deep Dive</h2>
+
+<div class="concept">
+<b>NPP Architecture</b><br>
+ISO 20022 messaging • Payment Access Gateways (PAGs) • 24/7/365 availability • Settlement via RBA Fast Settlement Service in central bank funds • PayID addressing
+</div>
+
+<div class="concept">
+<b>PayTo Agreement Lifecycle</b><br>
+<strong>Created</strong> (pending authorization) → <strong>Active</strong> (customer approved in bank app) → <strong>Suspended</strong> (paused by either party) → <strong>Cancelled</strong> (terminated)<br>
+Your system must track these states and handle transitions gracefully.
+</div>
+
+<div class="concept">
+<b>BECS Reality</b><br>
+Still processes huge volumes. Most existing direct debits run on BECS. The 2030 end-date was removed—transition is market-driven, not deadline-driven. <strong>FairPay strategy:</strong> Lead with PayTo, maintain BECS compatibility, don't over-invest in BECS innovation.
+</div>
+</section>
+
+<section class="section">
+<h2>Required Readings</h2>
+<a href="https://www.auspayplus.com.au/solutions/payto" target="_blank" class="resource">
+<strong>1. PayTo Overview</strong><br><small>AP+ — Agreements, authorization, control</small>
+</a>
+<a href="https://www.auspayplus.com.au/brands/npp-the-platform" target="_blank" class="resource">
+<strong>2. NPP Platform (Review)</strong><br><small>AP+ — Technical architecture</small>
+</a>
+<a href="https://www.rba.gov.au/media-releases/2026/mr-26-06.html" target="_blank" class="resource">
+<strong>3. PSB March 2026 (A2A section)</strong><br><small>RBA — Transition commentary</small>
+</a>
+</section>
+
+<section class="section">
+<h2>Knowledge Check</h2>
+<div class="card">
+<div class="quiz" id="quiz">
+<div class="q" data-correct="2">
+<div class="q-text">1. What is PayTo's key advantage over BECS for subscriptions?</div>
+<div class="opts">
+<label><input type="radio" name="q1" value="0">No transaction fees</label>
+<label><input type="radio" name="q1" value="1">Older and more established</label>
+<label><input type="radio" name="q1" value="2">Real-time confirmation vs batch delays</label>
+</div>
+</div>
+<div class="q" data-correct="1">
+<div class="q-text">2. How are PayTo agreements managed by customers?</div>
+<div class="opts">
+<label><input type="radio" name="q2" value="0">Through paper forms</label>
+<label><input type="radio" name="q2" value="1">In their banking app—view, pause, cancel</label>
+<label><input type="radio" name="q2" value="2">Through the merchant only</label>
+</div>
+</div>
+<div class="q" data-correct="0">
+<div class="q-text">3. What messaging standard does NPP use?</div>
+<div class="opts">
+<label><input type="radio" name="q3" value="0">ISO 20022</label>
+<label><input type="radio" name="q3" value="1">SWIFT MT</label>
+<label><input type="radio" name="q3" value="2">Fixed-width files</label>
+</div>
+</div>
+<div class="q" data-correct="2">
+<div class="q-text">4. BECS data descriptions are limited to:</div>
+<div class="opts">
+<label><input type="radio" name="q4" value="0">256 characters</label>
+<label><input type="radio" name="q4" value="1">100 characters</label>
+<label><input type="radio" name="q4" value="2">18 characters</label>
+</div>
+</div>
+</div>
+<button class="btn" onclick="checkQuiz()">Check Answers</button>
+<div id="result"></div>
+</div>
+</section>
+
+<section class="section">
+<div class="deliverable">
+<h3>📋 Week 2 Deliverable</h3>
+<p>Build these for your capstone (Slides 3-4):</p>
+<ul class="checklist">
+<li>☐ <strong>Rail Decision Matrix (1 slide):</strong> Apply 8 criteria to FairPay's top 2 use cases (e.g., gym memberships + B2B invoicing)</li>
+<li>☐ <strong>A2A Roadmap Hypothesis (½ page):</strong> What to build now (PayTo-first), what to maintain (BECS), what to avoid, key assumptions</li>
+</ul>
+</div>
+</section>
+
+<div class="nav-footer">
+<a href="week1.html" class="nav-btn">← Week 1</a>
+<a href="week3.html" class="nav-btn">Week 3: Cards & Stack →</a>
+</div>
+</div>
+
+<script>
+function checkQuiz(){
+let score=0,total=4;
+document.querySelectorAll('.q').forEach(q=>{
+const correct=q.dataset.correct;
+const selected=q.querySelector('input:checked');
+if(selected&&selected.value===correct)score++;
+});
+const r=document.getElementById('result');
+r.style.display='block';
+r.style.background=score>=3?'rgba(34,197,94,.15)':'rgba(249,115,22,.15)';
+r.innerHTML='<strong>Score: '+score+'/'+total+'</strong>';
+}
+</script>
+</body>
+</html>

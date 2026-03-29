@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 3: Cards & Processing Stack | FairPay CEO Course</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#ffffff;--card:#f8fafc;--elevated:#f1f5f9;--teal:#14b8a6;--teal-dim:rgba(20,184,166,.15);--orange:#f97316;--text:#0f172a;--text2:#475569;--muted:#64748b;--border:#e2e8f0;--success:#22c55e}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+.nav{position:sticky;top:0;background:rgba(255,255,255,.95);border-bottom:1px solid var(--border);padding:1rem 2rem;display:flex;justify-content:space-between}
+.nav a{color:var(--text2);text-decoration:none}.nav a:hover{color:var(--teal)}
+.hero{padding:3rem 2rem;background:linear-gradient(180deg,rgba(20,184,166,.08),transparent);border-bottom:1px solid var(--border);text-align:center}
+.week-label{display:inline-block;font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);background:var(--teal-dim);padding:.5rem 1rem;border-radius:2rem;margin-bottom:1rem}
+h1{font-family:'Instrument Serif',serif;font-size:2.5rem;margin-bottom:1rem}
+.subtitle{color:var(--text2);max-width:700px;margin:0 auto}
+.container{max-width:900px;margin:0 auto;padding:2rem}
+.section{margin-bottom:3rem}h2{font-family:'Instrument Serif',serif;font-size:1.5rem;margin-bottom:1rem;color:var(--teal)}
+h3{font-size:1.1rem;margin:1.5rem 0 .75rem}p{margin-bottom:1rem;color:var(--text2)}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.5rem;margin-bottom:1rem}
+.concept{background:var(--elevated);border-left:3px solid var(--teal);padding:1rem;margin-bottom:1rem;border-radius:0 8px 8px 0}.concept b{color:var(--teal)}
+.resource{display:block;padding:1rem;background:var(--elevated);border:1px solid var(--border);border-radius:8px;margin-bottom:.5rem;text-decoration:none;color:var(--text)}.resource:hover{border-color:var(--teal)}.resource small{color:var(--muted)}
+.quiz{margin-top:1rem}.q{margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}.q:last-child{border:none}.q-text{font-weight:500;margin-bottom:.75rem}
+.opts label{display:block;padding:.5rem .75rem;margin:.25rem 0;background:var(--elevated);border:1px solid var(--border);border-radius:6px;cursor:pointer}.opts label:hover{border-color:var(--teal)}.opts input{margin-right:.5rem}
+.btn{background:var(--teal);color:#fff;border:none;padding:.75rem 1.5rem;border-radius:8px;cursor:pointer;font-weight:600;margin-top:1rem}
+#result{margin-top:1rem;padding:1rem;border-radius:8px;display:none}
+.deliverable{background:linear-gradient(135deg,rgba(20,184,166,.1),rgba(20,184,166,.02));border:1px solid var(--teal);border-radius:12px;padding:1.5rem}
+.checklist{list-style:none;padding:0}.checklist li{padding:.5rem 0;border-bottom:1px solid var(--border);color:var(--text2)}.checklist li:last-child{border:none}
+.nav-footer{display:flex;justify-content:space-between;margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border)}
+.nav-btn{padding:.75rem 1.5rem;background:var(--card);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text2)}.nav-btn:hover{border-color:var(--teal);color:var(--text)}
+.stack-layer{background:var(--elevated);border:1px solid var(--border);padding:1rem;margin:.5rem 0;border-radius:8px;display:flex;justify-content:space-between;align-items:center}
+.stack-layer .name{font-weight:600;color:var(--text)}.stack-layer .decision{font-size:.85rem;color:var(--teal)}
+</style>
+</head>
+<body>
+<nav class="nav"><a href="week2.html">← Week 2</a><span style="color:var(--text);font-weight:600">Week 3 of 6</span><a href="week4.html">Week 4 →</a></nav>
+<header class="hero"><span class="week-label">Week 3</span><h1>Cards & Processing Stack</h1><p class="subtitle">Understand card economics and map FairPay's technical architecture.</p></header>
+<div class="container">
+
+<section class="section">
+<h2>Learning Objectives</h2>
+<div class="card"><ul style="color:var(--text2);padding-left:1.5rem">
+<li>Understand card economics: interchange, scheme fees, acquirer margin</li>
+<li>Explain least-cost routing and RBA benchmarks</li>
+<li>Map the payments technology stack layers</li>
+<li>Make informed build vs partner decisions for each layer</li>
+</ul></div>
+</section>
+
+<section class="section">
+<h2>Card Economics</h2>
+<p>Even as a PayTo-focused business, cards are your competitive context—what you're comparing costs against.</p>
+
+<div class="concept"><b>Merchant Service Fee = Interchange + Scheme Fees + Acquirer Margin</b><br>
+When a merchant accepts a card, this is what they pay. Understanding each component helps you articulate PayTo's cost advantage.</div>
+
+<div class="concept"><b>Interchange</b><br>
+Fee paid to the card-issuing bank. RBA regulates via benchmarks:<br>
+• Credit: 0.5% weighted average<br>
+• Debit: 8 cents weighted average<br>
+Varies by card type (premium cards = higher) and merchant category.</div>
+
+<div class="concept"><b>Scheme Fees</b><br>
+Paid to Visa/Mastercard/eftpos. Growing cost component, less transparent than interchange. RBA is examining these.</div>
+
+<div class="concept"><b>Least-Cost Routing (LCR)</b><br>
+Most Australian debit cards are dual-network (eftpos + Visa/Mastercard). LCR lets merchants route via cheaper network. eftpos often cheaper. RBA supports LCR as pro-competition.</div>
+
+<div class="concept"><b>FairPay Implication</b><br>
+If a merchant pays 1.5% on cards and you offer PayTo at 0.3%, that's compelling. But understand what you're comparing to, and build flexibility for regulatory changes (RBA conclusions coming end-March 2026).</div>
+</section>
+
+<section class="section">
+<h2>Payments Technology Stack</h2>
+<p>As CEO, you govern architecture. Here are the layers and typical build/partner decisions:</p>
+
+<div class="stack-layer"><span class="name">Frontend / UX</span><span class="decision">Build (your differentiation)</span></div>
+<div class="stack-layer"><span class="name">Orchestration (routing, retries, webhooks)</span><span class="decision">Build (core product logic)</span></div>
+<div class="stack-layer"><span class="name">Risk & Compliance (fraud, KYC)</span><span class="decision">Buy tools + Build rules</span></div>
+<div class="stack-layer"><span class="name">Rail Connections (NPP, BECS, cards)</span><span class="decision">Partner (sponsors/acquirers)</span></div>
+<div class="stack-layer"><span class="name">Ledger (balances, transactions)</span><span class="decision">Build (source of truth)</span></div>
+<div class="stack-layer"><span class="name">Reconciliation</span><span class="decision">Build (ops efficiency)</span></div>
+
+<div class="concept"><b>Key Principle</b><br>
+Own orchestration (your product logic), partner for rail access (you're not becoming an NPP participant), buy commodity tools (fraud screening, KYC), build differentiated UX (merchant dashboard, agreement flows).</div>
+</section>
+
+<section class="section">
+<h2>Required Readings</h2>
+<a href="https://www.rba.gov.au/payments-and-infrastructure/debit-cards/least-cost-routing.html" target="_blank" class="resource"><strong>1. Least-Cost Routing</strong><br><small>RBA — Definitions, rationale, expectations</small></a>
+<a href="https://www.rba.gov.au/payments-and-infrastructure/review-of-retail-payments-regulation/backgrounders/backgrounder-on-interchange-and-scheme-fees.html" target="_blank" class="resource"><strong>2. Interchange & Scheme Fees</strong><br><small>RBA — Benchmarks and regulation</small></a>
+</section>
+
+<section class="section">
+<h2>Knowledge Check</h2>
+<div class="card"><div class="quiz" id="quiz">
+<div class="q" data-correct="1"><div class="q-text">1. RBA's weighted average benchmark for credit interchange is:</div><div class="opts">
+<label><input type="radio" name="q1" value="0">0.3%</label>
+<label><input type="radio" name="q1" value="1">0.5%</label>
+<label><input type="radio" name="q1" value="2">1.0%</label>
+</div></div>
+<div class="q" data-correct="2"><div class="q-text">2. Least-Cost Routing allows merchants to:</div><div class="opts">
+<label><input type="radio" name="q2" value="0">Bypass interchange entirely</label>
+<label><input type="radio" name="q2" value="1">Accept only credit cards</label>
+<label><input type="radio" name="q2" value="2">Route dual-network debit via cheaper network</label>
+</div></div>
+<div class="q" data-correct="0"><div class="q-text">3. For FairPay, rail connections should typically be:</div><div class="opts">
+<label><input type="radio" name="q3" value="0">Partnered (via sponsors)</label>
+<label><input type="radio" name="q3" value="1">Built entirely in-house</label>
+<label><input type="radio" name="q3" value="2">Outsourced to a white-label provider</label>
+</div></div>
+</div>
+<button class="btn" onclick="checkQuiz()">Check Answers</button>
+<div id="result"></div></div>
+</section>
+
+<section class="section">
+<div class="deliverable"><h3>📋 Week 3 Deliverable</h3>
+<p>Build these for your capstone (Slides 5-7):</p>
+<ul class="checklist">
+<li>☐ <strong>Card Economics Summary (½ slide):</strong> Key cost components for merchant card acceptance</li>
+<li>☐ <strong>Reference Architecture (1 slide):</strong> FairPay stack layers with build/partner decisions</li>
+<li>☐ <strong>Build vs Partner Table (½ slide):</strong> Each layer, your choice, brief rationale</li>
+</ul></div>
+</section>
+
+<div class="nav-footer"><a href="week2.html" class="nav-btn">← Week 2</a><a href="week4.html" class="nav-btn">Week 4: Standards & Regulation →</a></div>
+</div>
+<script>
+function checkQuiz(){let s=0;document.querySelectorAll('.q').forEach(q=>{if(q.querySelector('input:checked')?.value===q.dataset.correct)s++});
+const r=document.getElementById('result');r.style.display='block';r.style.background=s>=2?'rgba(34,197,94,.15)':'rgba(249,115,22,.15)';r.innerHTML='<strong>Score: '+s+'/3</strong>';}
+</script>
+</body>
+</html>

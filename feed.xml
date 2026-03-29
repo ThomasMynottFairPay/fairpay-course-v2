@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" 
+     xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <!-- CHANNEL INFO - UPDATE THESE VALUES -->
+    <title>FairPay CEO Payments Course</title>
+    <link>https://your-domain.com/course</link>
+    <atom:link href="https://your-domain.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <description>A six-week audio preparation series for the FairPay CEO Payments Course. Each episode provides a 15-20 minute overview of the week's content—perfect for commute listening before you dive into the full materials.</description>
+    <language>en-au</language>
+    <copyright>© 2026 FairPay</copyright>
+    <lastBuildDate>Mon, 24 Mar 2026 00:00:00 +1100</lastBuildDate>
+    <pubDate>Mon, 24 Mar 2026 00:00:00 +1100</pubDate>
+    
+    <!-- ITUNES-SPECIFIC TAGS FOR SPOTIFY/APPLE PODCASTS -->
+    <itunes:author>FairPay</itunes:author>
+    <itunes:summary>A six-week audio preparation series for the FairPay CEO Payments Course. Each episode provides a 15-20 minute overview of the week's content—perfect for commute listening before you dive into the full materials.</itunes:summary>
+    <itunes:owner>
+      <itunes:name>FairPay</itunes:name>
+      <itunes:email>podcast@your-domain.com</itunes:email>
+    </itunes:owner>
+    <itunes:explicit>false</itunes:explicit>
+    <itunes:category text="Business">
+      <itunes:category text="Entrepreneurship"/>
+    </itunes:category>
+    <itunes:category text="Education">
+      <itunes:category text="How To"/>
+    </itunes:category>
+    <itunes:image href="https://your-domain.com/podcast-cover.jpg"/>
+    <itunes:type>serial</itunes:type>
+    
+    <!-- COVER IMAGE (1400x1400 to 3000x3000 required for Apple/Spotify) -->
+    <image>
+      <url>https://your-domain.com/podcast-cover.jpg</url>
+      <title>FairPay CEO Payments Course</title>
+      <link>https://your-domain.com/course</link>
+    </image>
+
+    <!-- EPISODE 1: Week 1 -->
+    <item>
+      <title>Week 1: Foundations & Ecosystem Mapping</title>
+      <description>Build the mental model every payments decision depends on. We cover clearing vs settlement, finality, push vs pull payments, and map Australia's payments ecosystem—RBA, AP+, AusPayNet, and where FairPay fits.</description>
+      <content:encoded><![CDATA[
+        <p>Before you dive into Week 1, prime your thinking with this audio overview. In 18-20 minutes, you'll understand:</p>
+        <ul>
+          <li><strong>Clearing vs Settlement</strong> — Why the movement of information isn't the same as the movement of money</li>
+          <li><strong>Finality</strong> — When a payment is truly irreversible, and why PayTo's strong finality is both an advantage and a responsibility</li>
+          <li><strong>Push vs Pull</strong> — How PayTo combines pull payment mechanics with customer control</li>
+          <li><strong>The Ecosystem</strong> — Who the key players are: RBA, AP+, AusPayNet, and the regulatory landscape</li>
+        </ul>
+        <p>Listen on your commute, then dive into the full Week 1 materials.</p>
+      ]]></content:encoded>
+      <link>https://your-domain.com/course/week1</link>
+      <guid isPermaLink="false">fairpay-ceo-course-week1-prep</guid>
+      <pubDate>Mon, 24 Mar 2026 00:00:00 +1100</pubDate>
+      <enclosure url="https://your-domain.com/audio/week1-prep.mp3" length="28800000" type="audio/mpeg"/>
+      <itunes:title>Week 1: Foundations & Ecosystem Mapping</itunes:title>
+      <itunes:author>FairPay</itunes:author>
+      <itunes:duration>19:12</itunes:duration>
+      <itunes:summary>Build the mental model every payments decision depends on. Clearing vs settlement, finality, push vs pull, and Australia's payments ecosystem.</itunes:summary>
+      <itunes:image href="https://your-domain.com/podcast-cover.jpg"/>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episode>1</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+
+    <!-- EPISODE 2: Week 2 -->
+    <item>
+      <title>Week 2: Rails Selection & Account-to-Account</title>
+      <description>Deep dive into NPP, PayTo, and BECS. Learn the 8-criteria framework for rail selection and build your decision matrix for FairPay's use cases.</description>
+      <content:encoded><![CDATA[
+        <p>Week 2 is about making rail selection decisions. This audio prep covers:</p>
+        <ul>
+          <li><strong>The 8-Criteria Framework</strong> — Availability, data richness, authorization model, reversibility, fraud posture, integration burden, unit economics, access constraints</li>
+          <li><strong>NPP & PayTo Deep Dive</strong> — Platform architecture and the agreement lifecycle</li>
+          <li><strong>BECS Reality Check</strong> — Why the 2030 end-date was removed and what it means for your strategy</li>
+          <li><strong>Building Your Matrix</strong> — How to apply the framework to your specific use cases</li>
+        </ul>
+      ]]></content:encoded>
+      <link>https://your-domain.com/course/week2</link>
+      <guid isPermaLink="false">fairpay-ceo-course-week2-prep</guid>
+      <pubDate>Mon, 31 Mar 2026 00:00:00 +1100</pubDate>
+      <enclosure url="https://your-domain.com/audio/week2-prep.mp3" length="27360000" type="audio/mpeg"/>
+      <itunes:title>Week 2: Rails Selection & Account-to-Account</itunes:title>
+      <itunes:author>FairPay</itunes:author>
+      <itunes:duration>18:14</itunes:duration>
+      <itunes:summary>The 8-criteria framework for rail selection. NPP, PayTo, and BECS deep dive.</itunes:summary>
+      <itunes:image href="https://your-domain.com/podcast-cover.jpg"/>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episode>2</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+
+    <!-- EPISODE 3: Week 3 -->
+    <item>
+      <title>Week 3: Cards & Processing Stack</title>
+      <description>Understand card economics (interchange, scheme fees, LCR) and map your payments technology stack with build vs partner decisions.</description>
+      <content:encoded><![CDATA[
+        <p>Cards are your competitive context. This audio prep covers:</p>
+        <ul>
+          <li><strong>Card Economics</strong> — Interchange + scheme fees + acquirer margin = merchant service fee</li>
+          <li><strong>Least-Cost Routing</strong> — How LCR is changing the competitive landscape</li>
+          <li><strong>The Technology Stack</strong> — Six layers from frontend to reconciliation</li>
+          <li><strong>Build vs Partner</strong> — A framework for deciding what to own and what to outsource</li>
+        </ul>
+      ]]></content:encoded>
+      <link>https://your-domain.com/course/week3</link>
+      <guid isPermaLink="false">fairpay-ceo-course-week3-prep</guid>
+      <pubDate>Mon, 07 Apr 2026 00:00:00 +1000</pubDate>
+      <enclosure url="https://your-domain.com/audio/week3-prep.mp3" length="25920000" type="audio/mpeg"/>
+      <itunes:title>Week 3: Cards & Processing Stack</itunes:title>
+      <itunes:author>FairPay</itunes:author>
+      <itunes:duration>17:17</itunes:duration>
+      <itunes:summary>Card economics and payments technology stack. Build vs partner decisions.</itunes:summary>
+      <itunes:image href="https://your-domain.com/podcast-cover.jpg"/>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episode>3</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+
+    <!-- EPISODE 4: Week 4 -->
+    <item>
+      <title>Week 4: Standards & Regulatory Mapping</title>
+      <description>Navigate ISO 20022, EMV, PCI DSS, and Australian regulatory requirements. Map your regulatory perimeter and build a compliance roadmap.</description>
+      <content:encoded><![CDATA[
+        <p>Compliance is an existential concern. This audio prep covers:</p>
+        <ul>
+          <li><strong>Technical Standards</strong> — ISO 20022, EMV tokenisation, 3-D Secure, PCI DSS v4.0</li>
+          <li><strong>Australian Regulators</strong> — RBA, ASIC, AUSTRAC, Treasury licensing reforms</li>
+          <li><strong>Key Dates</strong> — Timeline of regulatory milestones through 2026</li>
+          <li><strong>Building Your Roadmap</strong> — What's required before launch vs what builds over time</li>
+        </ul>
+      ]]></content:encoded>
+      <link>https://your-domain.com/course/week4</link>
+      <guid isPermaLink="false">fairpay-ceo-course-week4-prep</guid>
+      <pubDate>Mon, 14 Apr 2026 00:00:00 +1000</pubDate>
+      <enclosure url="https://your-domain.com/audio/week4-prep.mp3" length="28080000" type="audio/mpeg"/>
+      <itunes:title>Week 4: Standards & Regulatory Mapping</itunes:title>
+      <itunes:author>FairPay</itunes:author>
+      <itunes:duration>18:43</itunes:duration>
+      <itunes:summary>ISO 20022, PCI DSS, and Australian regulatory requirements. Build your compliance roadmap.</itunes:summary>
+      <itunes:image href="https://your-domain.com/podcast-cover.jpg"/>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episode>4</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+
+    <!-- EPISODE 5: Week 5 -->
+    <item>
+      <title>Week 5: Fraud, Economics & Integration</title>
+      <description>Understand Australian fraud landscape, build your risk register, construct unit economics, and design operational workflows.</description>
+      <content:encoded><![CDATA[
+        <p>Making FairPay operationally real. This audio prep covers:</p>
+        <ul>
+          <li><strong>Australian Fraud Landscape</strong> — $816M CNP fraud and why PayTo is different</li>
+          <li><strong>Risk Register</strong> — Categories, scenarios, controls, and KRIs</li>
+          <li><strong>Unit Economics</strong> — Cost stack, pricing strategy, sensitivity analysis</li>
+          <li><strong>Operations</strong> — Reconciliation, onboarding, support workflows</li>
+        </ul>
+      ]]></content:encoded>
+      <link>https://your-domain.com/course/week5</link>
+      <guid isPermaLink="false">fairpay-ceo-course-week5-prep</guid>
+      <pubDate>Mon, 21 Apr 2026 00:00:00 +1000</pubDate>
+      <enclosure url="https://your-domain.com/audio/week5-prep.mp3" length="26640000" type="audio/mpeg"/>
+      <itunes:title>Week 5: Fraud, Economics & Integration</itunes:title>
+      <itunes:author>FairPay</itunes:author>
+      <itunes:duration>17:46</itunes:duration>
+      <itunes:summary>Fraud landscape, risk register, unit economics, and operational workflows.</itunes:summary>
+      <itunes:image href="https://your-domain.com/podcast-cover.jpg"/>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episode>5</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+
+    <!-- EPISODE 6: Week 6 -->
+    <item>
+      <title>Week 6: Partnerships, Trends & Capstone</title>
+      <description>Finalize your partner strategy, track external changes, and complete your FairPay Payments Strategy Pack.</description>
+      <content:encoded><![CDATA[
+        <p>The final week—pulling it all together. This audio prep covers:</p>
+        <ul>
+          <li><strong>Partner Categories</strong> — NPP access, BECS sponsor, KYC/KYB, fraud tools, compliance advisory</li>
+          <li><strong>Negotiation Priorities</strong> — Commercial, risk, data, security</li>
+          <li><strong>External Watchlist</strong> — RBA decisions, AUSTRAC reforms, licensing evolution</li>
+          <li><strong>Capstone Overview</strong> — What your Strategy Pack should contain and how it's assessed</li>
+        </ul>
+      ]]></content:encoded>
+      <link>https://your-domain.com/course/week6</link>
+      <guid isPermaLink="false">fairpay-ceo-course-week6-prep</guid>
+      <pubDate>Mon, 28 Apr 2026 00:00:00 +1000</pubDate>
+      <enclosure url="https://your-domain.com/audio/week6-prep.mp3" length="24480000" type="audio/mpeg"/>
+      <itunes:title>Week 6: Partnerships, Trends & Capstone</itunes:title>
+      <itunes:author>FairPay</itunes:author>
+      <itunes:duration>16:19</itunes:duration>
+      <itunes:summary>Partner strategy, external changes, and completing your capstone Strategy Pack.</itunes:summary>
+      <itunes:image href="https://your-domain.com/podcast-cover.jpg"/>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:episode>6</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+
+  </channel>
+</rss>

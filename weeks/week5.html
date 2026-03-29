@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 5: Fraud, Economics & Integration | FairPay CEO Course</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#ffffff;--card:#f8fafc;--elevated:#f1f5f9;--teal:#14b8a6;--teal-dim:rgba(20,184,166,.15);--orange:#f97316;--text:#0f172a;--text2:#475569;--muted:#64748b;--border:#e2e8f0}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+.nav{position:sticky;top:0;background:rgba(255,255,255,.95);border-bottom:1px solid var(--border);padding:1rem 2rem;display:flex;justify-content:space-between}.nav a{color:var(--text2);text-decoration:none}.nav a:hover{color:var(--teal)}
+.hero{padding:3rem 2rem;background:linear-gradient(180deg,rgba(20,184,166,.08),transparent);border-bottom:1px solid var(--border);text-align:center}
+.week-label{display:inline-block;font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);background:var(--teal-dim);padding:.5rem 1rem;border-radius:2rem;margin-bottom:1rem}
+h1{font-family:'Instrument Serif',serif;font-size:2.5rem;margin-bottom:1rem}.subtitle{color:var(--text2);max-width:700px;margin:0 auto}
+.container{max-width:900px;margin:0 auto;padding:2rem}.section{margin-bottom:3rem}
+h2{font-family:'Instrument Serif',serif;font-size:1.5rem;margin-bottom:1rem;color:var(--teal)}h3{font-size:1.1rem;margin:1.5rem 0 .75rem}p{margin-bottom:1rem;color:var(--text2)}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.5rem;margin-bottom:1rem}
+.concept{background:var(--elevated);border-left:3px solid var(--teal);padding:1rem;margin-bottom:1rem;border-radius:0 8px 8px 0}.concept b{color:var(--teal)}
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem;margin:1rem 0}
+.stat{background:var(--elevated);border:1px solid var(--orange);padding:1.5rem;border-radius:12px;text-align:center}
+.stat-num{font-family:'Instrument Serif',serif;font-size:2rem;color:var(--orange)}.stat-label{font-size:.85rem;color:var(--text2)}
+.resource{display:block;padding:1rem;background:var(--elevated);border:1px solid var(--border);border-radius:8px;margin-bottom:.5rem;text-decoration:none;color:var(--text)}.resource:hover{border-color:var(--teal)}.resource small{color:var(--muted)}
+.quiz{margin-top:1rem}.q{margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}.q:last-child{border:none}.q-text{font-weight:500;margin-bottom:.75rem}
+.opts label{display:block;padding:.5rem .75rem;margin:.25rem 0;background:var(--elevated);border:1px solid var(--border);border-radius:6px;cursor:pointer}.opts label:hover{border-color:var(--teal)}.opts input{margin-right:.5rem}
+.btn{background:var(--teal);color:#fff;border:none;padding:.75rem 1.5rem;border-radius:8px;cursor:pointer;font-weight:600;margin-top:1rem}#result{margin-top:1rem;padding:1rem;border-radius:8px;display:none}
+.deliverable{background:linear-gradient(135deg,rgba(20,184,166,.1),rgba(20,184,166,.02));border:1px solid var(--teal);border-radius:12px;padding:1.5rem}
+.checklist{list-style:none;padding:0}.checklist li{padding:.5rem 0;border-bottom:1px solid var(--border);color:var(--text2)}.checklist li:last-child{border:none}
+.nav-footer{display:flex;justify-content:space-between;margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border)}.nav-btn{padding:.75rem 1.5rem;background:var(--card);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text2)}.nav-btn:hover{border-color:var(--teal);color:var(--text)}
+</style>
+</head>
+<body>
+<nav class="nav"><a href="week4.html">← Week 4</a><span style="color:var(--text);font-weight:600">Week 5 of 6</span><a href="week6.html">Week 6 →</a></nav>
+<header class="hero"><span class="week-label">Week 5</span><h1>Fraud, Economics & Integration</h1><p class="subtitle">Build FairPay's risk register, unit economics, and reconciliation workflows.</p></header>
+<div class="container">
+
+<section class="section">
+<h2>Learning Objectives</h2>
+<div class="card"><ul style="color:var(--text2);padding-left:1.5rem">
+<li>Understand Australian fraud landscape and PayTo's different risk profile</li>
+<li>Build a CEO-level risk register</li>
+<li>Construct unit economics and pricing model</li>
+<li>Design reconciliation and onboarding workflows</li>
+</ul></div>
+</section>
+
+<section class="section">
+<h2>Australian Fraud Landscape</h2>
+<div class="stat-grid">
+<div class="stat"><div class="stat-num">$913M</div><div class="stat-label">Total card fraud (2024)</div></div>
+<div class="stat"><div class="stat-num">$816M</div><div class="stat-label">CNP fraud (2024)</div></div>
+<div class="stat"><div class="stat-num">89%</div><div class="stat-label">CNP share of card fraud</div></div>
+</div>
+<div class="concept"><b>Why CNP Dominates</b><br>Card-not-present fraud is high because cards are used online without physical verification. Stolen card details can be used remotely.</div>
+<div class="concept"><b>PayTo's Different Profile</b><br>Customer authorizes agreements in their banking app with their bank's security. No stored credentials at merchant. Different risk model—but new risks emerge: agreement abuse, social engineering, merchant fraud.</div>
+</section>
+
+<section class="section">
+<h2>Building Your Risk Register</h2>
+<p>Categories to include:</p>
+<div class="concept"><b>Fraud/Scams</b> — Unauthorized collections, merchant fraud, social engineering of customers</div>
+<div class="concept"><b>Compliance</b> — AUSTRAC failures, ePayments Code breaches, licensing gaps</div>
+<div class="concept"><b>Cyber</b> — Data breach, API security, credential compromise</div>
+<div class="concept"><b>Operational</b> — System outages, reconciliation failures, support overload</div>
+<div class="concept"><b>Liquidity/Safeguarding</b> — If holding funds: safeguarding requirements, settlement timing</div>
+<div class="concept"><b>Reputational</b> — Merchant failures reflecting on FairPay, public incidents</div>
+<p style="margin-top:1rem">For each risk: scenario, existing controls, KRIs (key risk indicators), owner, residual rating.</p>
+</section>
+
+<section class="section">
+<h2>Unit Economics</h2>
+<div class="concept"><b>Cost Stack</b><br>
+Transaction costs (PayTo fees from sponsor) + Risk costs (fraud losses, disputes) + Operations (support, reconciliation) + Compliance (AML program, reporting) + Infrastructure (systems, monitoring) = Total cost per transaction</div>
+<div class="concept"><b>Pricing</b><br>Price above cost stack with margin. Consider: blended (simple) vs cost-plus (transparent). Test sensitivity to regulatory changes—if RBA shifts card costs, does your comparative value prop hold?</div>
+</section>
+
+<section class="section">
+<h2>Reconciliation & Integration</h2>
+<div class="concept"><b>Daily Reconciliation</b><br>Expected settlements vs actual. Handle exceptions: missing, duplicates, timing differences. ISO 20022's rich data makes matching easier—use it.</div>
+<div class="concept"><b>Onboarding Flow</b><br>Merchant KYB → Agreement setup → Test transactions → Go live. Design for self-service where possible.</div>
+<div class="concept"><b>Support Surface</b><br>What questions will merchants ask? Failed collections, disputed agreements, settlement queries. Design support tooling before you need it.</div>
+</section>
+
+<section class="section">
+<h2>Required Readings</h2>
+<a href="https://auspaynet.com.au/resources/fraud-statistics/2024-Calendar-year" target="_blank" class="resource"><strong>1. Fraud Statistics 2024</strong><br><small>AusPayNet — Australian fraud data</small></a>
+<a href="https://handbook.apra.gov.au/standard/cps-234" target="_blank" class="resource"><strong>2. CPS 234 Information Security</strong><br><small>APRA — Partner security expectations</small></a>
+</section>
+
+<section class="section">
+<h2>Knowledge Check</h2>
+<div class="card"><div class="quiz" id="quiz">
+<div class="q" data-correct="1"><div class="q-text">1. CNP fraud in Australia (2024) was approximately:</div><div class="opts">
+<label><input type="radio" name="q1" value="0">$200 million</label>
+<label><input type="radio" name="q1" value="1">$816 million</label>
+<label><input type="radio" name="q1" value="2">$2 billion</label>
+</div></div>
+<div class="q" data-correct="0"><div class="q-text">2. PayTo changes fraud risk because:</div><div class="opts">
+<label><input type="radio" name="q2" value="0">Customer authorizes in their bank app with bank security</label>
+<label><input type="radio" name="q2" value="1">There are no fraud risks with PayTo</label>
+<label><input type="radio" name="q2" value="2">Merchants store customer credentials</label>
+</div></div>
+<div class="q" data-correct="2"><div class="q-text">3. Unit economics should include sensitivity analysis for:</div><div class="opts">
+<label><input type="radio" name="q3" value="0">Weather patterns</label>
+<label><input type="radio" name="q3" value="1">Competitor marketing spend</label>
+<label><input type="radio" name="q3" value="2">Regulatory changes affecting card costs</label>
+</div></div>
+</div>
+<button class="btn" onclick="checkQuiz()">Check Answers</button>
+<div id="result"></div></div>
+</section>
+
+<section class="section">
+<div class="deliverable"><h3>📋 Week 5 Deliverable</h3>
+<p>Build these for your capstone (Slides 9-11):</p>
+<ul class="checklist">
+<li>☐ <strong>Risk Register v1 (1 slide + appendix):</strong> Top 10 risks across categories with controls and KRIs</li>
+<li>☐ <strong>Unit Economics Model (1 slide):</strong> Cost stack, pricing logic, 3 sensitivity scenarios</li>
+<li>☐ <strong>Reconciliation Checklist:</strong> MVP process, exception handling, scale-up roadmap</li>
+</ul></div>
+</section>
+
+<div class="nav-footer"><a href="week4.html" class="nav-btn">← Week 4</a><a href="week6.html" class="nav-btn">Week 6: Partnerships & Capstone →</a></div>
+</div>
+<script>
+function checkQuiz(){let s=0;document.querySelectorAll('.q').forEach(q=>{if(q.querySelector('input:checked')?.value===q.dataset.correct)s++});
+const r=document.getElementById('result');r.style.display='block';r.style.background=s>=2?'rgba(34,197,94,.15)':'rgba(249,115,22,.15)';r.innerHTML='<strong>Score: '+s+'/3</strong>';}
+</script>
+</body>
+</html>

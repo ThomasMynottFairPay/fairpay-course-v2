@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 1: Foundations & Ecosystem Mapping | FairPay CEO Course</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#ffffff;--card:#f8fafc;--elevated:#f1f5f9;--teal:#0d9488;--teal-dim:rgba(13,148,136,.1);--orange:#ea580c;--text:#0f172a;--text2:#475569;--muted:#64748b;--border:#e2e8f0;--success:#16a34a}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+.nav{position:sticky;top:0;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:1rem 2rem;display:flex;justify-content:space-between;z-index:100}
+.nav a{color:var(--text2);text-decoration:none;font-size:.9rem}.nav a:hover{color:var(--teal)}
+.hero{padding:4rem 2rem 3rem;background:linear-gradient(180deg,rgba(13,148,136,.06),transparent);border-bottom:1px solid var(--border);text-align:center}
+.week-label{display:inline-block;font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);background:var(--teal-dim);padding:.5rem 1rem;border-radius:2rem;margin-bottom:1rem}
+h1{font-family:'Instrument Serif',serif;font-size:clamp(2rem,5vw,3rem);font-weight:400;margin-bottom:1rem}
+.subtitle{color:var(--text2);max-width:700px;margin:0 auto;font-size:1.1rem}
+.progress-bar{max-width:600px;margin:2rem auto 0;display:flex;gap:.5rem}
+.progress-step{flex:1;height:4px;background:var(--border);border-radius:2px}.progress-step.active{background:var(--teal)}
+.container{max-width:800px;margin:0 auto;padding:2rem}
+.section{margin-bottom:4rem}
+h2{font-family:'Instrument Serif',serif;font-size:1.75rem;margin-bottom:1.5rem;color:var(--text);border-bottom:2px solid var(--teal);padding-bottom:.5rem;display:inline-block}
+h3{font-size:1.2rem;margin:2rem 0 1rem;color:var(--text);font-weight:600}
+h4{font-size:1rem;margin:1.5rem 0 .75rem;color:var(--teal);font-weight:600}
+p{margin-bottom:1rem;color:var(--text2)}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.5rem;margin-bottom:1.5rem}
+.intro-card{background:linear-gradient(135deg,var(--teal-dim),transparent);border:1px solid rgba(13,148,136,.2);padding:2rem}
+.concept{background:var(--bg);border-left:4px solid var(--teal);padding:1.25rem;margin-bottom:1.5rem;border-radius:0 8px 8px 0;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+.concept-title{font-weight:600;color:var(--teal);font-size:1.1rem;margin-bottom:.5rem}
+.concept p{margin-bottom:.5rem}.concept p:last-child{margin-bottom:0}
+.diagram-container{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.5rem;margin:2rem 0;text-align:center}
+.diagram-title{font-size:.8rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:1rem}
+.diagram-caption{font-size:.9rem;color:var(--text2);margin-top:1rem;font-style:italic}
+.diagram-container svg{max-width:100%;height:auto}
+.example-box{background:var(--elevated);border:1px solid var(--border);border-radius:8px;padding:1.25rem;margin:1rem 0}
+.example-label{font-size:.75rem;font-weight:600;color:var(--orange);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.5rem}
+.comparison-table{width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:.9rem}
+.comparison-table th,.comparison-table td{padding:1rem;text-align:left;border:1px solid var(--border)}
+.comparison-table th{background:var(--elevated);color:var(--teal);font-weight:600}
+.comparison-table td{color:var(--text2)}
+.key-point{background:var(--teal-dim);border:1px solid rgba(13,148,136,.2);border-radius:8px;padding:1.25rem;margin:1.5rem 0}
+.key-point-title{font-weight:600;color:var(--teal);margin-bottom:.5rem}
+.institution{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.5rem;margin-bottom:1rem}
+.institution-header{display:flex;justify-content:space-between;align-items:start;margin-bottom:1rem;flex-wrap:wrap;gap:.5rem}
+.institution-name{font-weight:600;font-size:1.1rem;color:var(--text)}
+.institution-type{font-size:.75rem;background:var(--elevated);color:var(--muted);padding:.25rem .75rem;border-radius:1rem}
+.institution-role{color:var(--text2);font-size:.95rem;margin-bottom:.75rem}
+.institution-relevance{background:var(--teal-dim);padding:.75rem;border-radius:6px;font-size:.9rem;color:var(--text)}
+.resource{display:flex;gap:1rem;padding:1.25rem;background:var(--card);border:1px solid var(--border);border-radius:8px;margin-bottom:.75rem;text-decoration:none;color:inherit;transition:all .2s}
+.resource:hover{border-color:var(--teal);box-shadow:0 2px 8px rgba(13,148,136,.1)}
+.resource-num{width:32px;height:32px;background:var(--teal);color:white;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:600;flex-shrink:0}
+.resource-content{flex:1}
+.resource-title{font-weight:600;color:var(--text);margin-bottom:.25rem}
+.resource-desc{font-size:.85rem;color:var(--muted)}
+.resource-time{font-size:.75rem;color:var(--teal);margin-top:.25rem}
+.quiz-container{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:2rem}
+.quiz-intro{margin-bottom:2rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}
+.q{margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid var(--border)}.q:last-of-type{border:none;margin-bottom:1rem}
+.q-num{font-size:.75rem;font-weight:600;color:var(--teal);text-transform:uppercase;margin-bottom:.5rem}
+.q-text{font-weight:500;font-size:1.05rem;margin-bottom:1rem;color:var(--text)}
+.opts label{display:block;padding:.875rem 1rem;margin:.5rem 0;background:var(--bg);border:1px solid var(--border);border-radius:8px;cursor:pointer;transition:all .2s;color:var(--text2)}
+.opts label:hover{border-color:var(--teal);background:var(--teal-dim)}
+.opts input{margin-right:.75rem}
+.feedback{margin-top:.75rem;padding:1rem;border-radius:8px;font-size:.9rem;display:none}
+.feedback.correct{display:block;background:rgba(22,163,74,.1);border:1px solid rgba(22,163,74,.2);color:var(--success)}
+.feedback.incorrect{display:block;background:rgba(234,88,12,.1);border:1px solid rgba(234,88,12,.2);color:var(--orange)}
+.btn{background:var(--teal);color:#fff;border:none;padding:.875rem 2rem;border-radius:8px;cursor:pointer;font-weight:600;font-size:1rem}
+.btn:hover{background:#0f766e}
+.score-display{margin-top:2rem;padding:2rem;background:var(--elevated);border-radius:12px;text-align:center;display:none}
+.score-display.visible{display:block}
+.score-num{font-family:'Instrument Serif',serif;font-size:3.5rem;color:var(--teal)}
+.score-label{color:var(--muted);margin-bottom:1rem}
+.deliverable{background:linear-gradient(135deg,var(--teal-dim),transparent);border:2px solid var(--teal);border-radius:16px;padding:2rem}
+.deliverable h3{font-family:'Instrument Serif',serif;font-size:1.5rem;margin:0 0 1rem;color:var(--teal)}
+.checklist{list-style:none;padding:0}
+.checklist li{padding:1rem;margin-bottom:.75rem;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--text2)}
+.checklist li strong{color:var(--text);display:block;margin-bottom:.25rem}
+.nav-footer{display:flex;justify-content:space-between;margin-top:4rem;padding-top:2rem;border-top:1px solid var(--border)}
+.nav-btn{padding:1rem 1.5rem;background:var(--card);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text2);font-weight:500}
+.nav-btn:hover{border-color:var(--teal);color:var(--teal)}
+.nav-btn.primary{background:var(--teal);color:white;border-color:var(--teal)}
+.nav-btn.primary:hover{background:#0f766e}
+</style>
+</head>
+<body>
+<nav class="nav">
+<a href="../index.html">← Course Home</a>
+<span style="color:var(--text);font-weight:600">Week 1 of 6</span>
+<a href="week2.html">Week 2 →</a>
+</nav>
+
+<header class="hero">
+<span class="week-label">Week 1</span>
+<h1>Foundations & Ecosystem Mapping</h1>
+<p class="subtitle">Build the mental model that every payments decision depends on. Map where FairPay fits in Australia's ecosystem.</p>
+<div class="progress-bar">
+<div class="progress-step active"></div>
+<div class="progress-step"></div>
+<div class="progress-step"></div>
+<div class="progress-step"></div>
+<div class="progress-step"></div>
+<div class="progress-step"></div>
+</div>
+</header>
+
+<div class="container">
+
+<!-- INTRODUCTION -->
+<section class="section">
+<div class="card intro-card">
+<h3 style="margin-top:0;color:var(--teal)">Why This Week Matters</h3>
+<p>Before you make any payments decision—which rails to use, who to partner with, how to price—you need three concepts locked in. CEOs who don't have this mental model make expensive mistakes: they misprice risk, pick wrong partners, and build wrong products.</p>
+<p style="margin-bottom:0">This week gives you the foundational vocabulary and framework. Everything in Weeks 2-6 builds on these concepts.</p>
+</div>
+
+<h2>Learning Objectives</h2>
+<div class="card">
+<p style="margin-bottom:1rem">By the end of this week, you will be able to:</p>
+<ul style="color:var(--text2);padding-left:1.5rem;margin:0">
+<li style="margin-bottom:.5rem">Explain the difference between clearing and settlement</li>
+<li style="margin-bottom:.5rem">Define finality and articulate its implications for risk</li>
+<li style="margin-bottom:.5rem">Distinguish push vs pull payments and position PayTo</li>
+<li style="margin-bottom:.5rem">Map Australia's payments ecosystem and key institutions</li>
+<li>Identify FairPay's positioning options and control points</li>
+</ul>
+</div>
+</section>
+
+<!-- CLEARING VS SETTLEMENT -->
+<section class="section">
+<h2>Core Payment Primitives</h2>
+
+<div class="concept">
+<div class="concept-title">1. Clearing vs Settlement</div>
+<p><strong>Clearing</strong> is the process of exchanging payment instructions and calculating obligations. Think of it as the messaging layer—authorization requests, confirmations, instructions. This is <em>information</em>, not money.</p>
+<p><strong>Settlement</strong> is when actual money moves. In Australia, final settlement happens in "central bank money" at the RBA via <strong>Exchange Settlement Accounts (ESAs)</strong>.</p>
+</div>
+
+<!-- CLEARING VS SETTLEMENT DIAGRAM -->
+<div class="diagram-container">
+<div class="diagram-title">Clearing vs Settlement Flow</div>
+<svg viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background sections -->
+  <rect x="20" y="60" width="310" height="240" rx="12" fill="#f0fdfa" stroke="#99f6e4" stroke-width="2"/>
+  <rect x="370" y="60" width="310" height="240" rx="12" fill="#fef3c7" stroke="#fcd34d" stroke-width="2"/>
+  
+  <!-- Section Labels -->
+  <text x="175" y="40" text-anchor="middle" font-family="DM Sans" font-size="14" font-weight="600" fill="#0d9488">CLEARING</text>
+  <text x="175" y="55" text-anchor="middle" font-family="DM Sans" font-size="11" fill="#64748b">Information Exchange</text>
+  <text x="525" y="40" text-anchor="middle" font-family="DM Sans" font-size="14" font-weight="600" fill="#d97706">SETTLEMENT</text>
+  <text x="525" y="55" text-anchor="middle" font-family="DM Sans" font-size="11" fill="#64748b">Money Movement</text>
+  
+  <!-- Clearing side icons -->
+  <rect x="60" y="90" width="100" height="60" rx="8" fill="white" stroke="#0d9488" stroke-width="2"/>
+  <text x="110" y="115" text-anchor="middle" font-family="DM Sans" font-size="11" font-weight="600" fill="#0f172a">Customer</text>
+  <text x="110" y="130" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#64748b">Initiates</text>
+  <text x="110" y="143" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#64748b">payment</text>
+  
+  <rect x="190" y="90" width="100" height="60" rx="8" fill="white" stroke="#0d9488" stroke-width="2"/>
+  <text x="240" y="115" text-anchor="middle" font-family="DM Sans" font-size="11" font-weight="600" fill="#0f172a">Payment</text>
+  <text x="240" y="130" text-anchor="middle" font-family="DM Sans" font-size="11" font-weight="600" fill="#0f172a">Network</text>
+  <text x="240" y="143" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#64748b">Routes message</text>
+  
+  <!-- Arrows for clearing -->
+  <path d="M160 120 L185 120" stroke="#0d9488" stroke-width="2" fill="none" marker-end="url(#arrowTeal)"/>
+  
+  <!-- Message bubbles -->
+  <rect x="50" y="170" width="120" height="50" rx="6" fill="#ccfbf1" stroke="#5eead4"/>
+  <text x="110" y="192" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#0f172a">"Pay $100 to</text>
+  <text x="110" y="205" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#0f172a">Merchant ABC"</text>
+  
+  <rect x="180" y="170" width="120" height="50" rx="6" fill="#ccfbf1" stroke="#5eead4"/>
+  <text x="240" y="192" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#0f172a">"Authorized ✓"</text>
+  <text x="240" y="205" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#0f172a">"Proceed"</text>
+  
+  <!-- Messages label -->
+  <text x="175" y="250" text-anchor="middle" font-family="DM Sans" font-size="12" fill="#0d9488">📨 Messages only</text>
+  <text x="175" y="268" text-anchor="middle" font-family="DM Sans" font-size="11" fill="#64748b">No money has moved yet</text>
+  
+  <!-- Settlement side -->
+  <rect x="410" y="90" width="100" height="60" rx="8" fill="white" stroke="#d97706" stroke-width="2"/>
+  <text x="460" y="115" text-anchor="middle" font-family="DM Sans" font-size="11" font-weight="600" fill="#0f172a">Bank A</text>
+  <text x="460" y="130" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#64748b">ESA Balance:</text>
+  <text x="460" y="143" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#dc2626">-$100</text>
+  
+  <rect x="540" y="90" width="100" height="60" rx="8" fill="white" stroke="#d97706" stroke-width="2"/>
+  <text x="590" y="115" text-anchor="middle" font-family="DM Sans" font-size="11" font-weight="600" fill="#0f172a">Bank B</text>
+  <text x="590" y="130" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#64748b">ESA Balance:</text>
+  <text x="590" y="143" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#16a34a">+$100</text>
+  
+  <!-- RBA box -->
+  <rect x="440" y="170" width="170" height="60" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+  <text x="525" y="195" text-anchor="middle" font-family="DM Sans" font-size="12" font-weight="600" fill="#0f172a">🏛️ RBA</text>
+  <text x="525" y="212" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#64748b">Fast Settlement Service</text>
+  
+  <!-- Money arrow -->
+  <path d="M460 155 L460 165 L590 165 L590 155" stroke="#16a34a" stroke-width="3" fill="none"/>
+  <circle cx="525" cy="165" r="12" fill="#16a34a"/>
+  <text x="525" y="169" text-anchor="middle" font-family="DM Sans" font-size="10" fill="white">$</text>
+  
+  <!-- Settlement label -->
+  <text x="525" y="260" text-anchor="middle" font-family="DM Sans" font-size="12" fill="#d97706">💰 Actual funds move</text>
+  <text x="525" y="278" text-anchor="middle" font-family="DM Sans" font-size="11" fill="#64748b">Final & irrevocable</text>
+  
+  <!-- Arrow marker definitions -->
+  <defs>
+    <marker id="arrowTeal" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#0d9488"/>
+    </marker>
+  </defs>
+</svg>
+<div class="diagram-caption">Clearing exchanges information; Settlement moves actual money through RBA accounts</div>
+</div>
+
+<div class="example-box">
+<div class="example-label">Why This Matters for FairPay</div>
+<p style="margin-bottom:0">When you tell a merchant "the money's coming," what are you promising? With NPP/PayTo, clearing AND settlement happen in near real-time—that's powerful. With cards, clearing is instant but settlement comes later in batches, and chargebacks can reverse it months later.</p>
+</div>
+
+<!-- FINALITY -->
+<div class="concept">
+<div class="concept-title">2. Finality</div>
+<p>When is a payment truly done? When can neither party reverse it?</p>
+<p>With PayTo, once settlement occurs through the Fast Settlement Service—<strong>it's final</strong>. The payer can't call their bank and reverse it like a card chargeback. That's a feature for collections: more certainty, less fraud risk.</p>
+</div>
+
+<!-- FINALITY COMPARISON DIAGRAM -->
+<div class="diagram-container">
+<div class="diagram-title">Finality Comparison Across Rails</div>
+<svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg">
+  <!-- Timeline base -->
+  <line x1="50" y1="140" x2="650" y2="140" stroke="#e2e8f0" stroke-width="3"/>
+  
+  <!-- Time markers -->
+  <text x="50" y="170" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#64748b">Payment</text>
+  <text x="50" y="182" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#64748b">Initiated</text>
+  <text x="200" y="170" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#64748b">Minutes</text>
+  <text x="350" y="170" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#64748b">Days</text>
+  <text x="500" y="170" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#64748b">Weeks</text>
+  <text x="650" y="170" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#64748b">Months</text>
+  
+  <!-- PayTo bar (strongest) -->
+  <rect x="50" y="40" width="100" height="30" rx="4" fill="#0d9488"/>
+  <text x="100" y="60" text-anchor="middle" font-family="DM Sans" font-size="11" font-weight="600" fill="white">PayTo</text>
+  <circle cx="150" cy="55" r="12" fill="#16a34a"/>
+  <text x="150" y="59" text-anchor="middle" font-family="DM Sans" font-size="10" fill="white">✓</text>
+  <text x="175" y="50" font-family="DM Sans" font-size="10" fill="#16a34a" font-weight="600">FINAL</text>
+  <text x="175" y="63" font-family="DM Sans" font-size="9" fill="#64748b">in seconds</text>
+  
+  <!-- BECS bar (moderate) -->
+  <rect x="50" y="80" width="300" height="30" rx="4" fill="#f59e0b"/>
+  <text x="100" y="100" text-anchor="middle" font-family="DM Sans" font-size="11" font-weight="600" fill="white">BECS</text>
+  <circle cx="350" cy="95" r="12" fill="#d97706"/>
+  <text x="350" y="99" text-anchor="middle" font-family="DM Sans" font-size="10" fill="white">~</text>
+  <text x="380" y="90" font-family="DM Sans" font-size="10" fill="#d97706" font-weight="600">Indemnity window</text>
+  <text x="380" y="103" font-family="DM Sans" font-size="9" fill="#64748b">Claims possible</text>
+  
+  <!-- Cards bar (weakest) -->
+  <rect x="50" y="195" width="550" height="30" rx="4" fill="#ef4444"/>
+  <text x="100" y="215" text-anchor="middle" font-family="DM Sans" font-size="11" font-weight="600" fill="white">Cards</text>
+  <circle cx="600" cy="210" r="12" fill="#dc2626"/>
+  <text x="600" y="214" text-anchor="middle" font-family="DM Sans" font-size="10" fill="white">!</text>
+  <text x="450" y="205" font-family="DM Sans" font-size="10" fill="#dc2626" font-weight="600">Chargeback window (up to 120 days)</text>
+  <text x="450" y="218" font-family="DM Sans" font-size="9" fill="#64748b">Payment can be reversed</text>
+  
+  <!-- Legend -->
+  <rect x="50" y="245" width="12" height="12" rx="2" fill="#16a34a"/>
+  <text x="70" y="255" font-family="DM Sans" font-size="10" fill="#64748b">Strong finality</text>
+  <rect x="180" y="245" width="12" height="12" rx="2" fill="#f59e0b"/>
+  <text x="200" y="255" font-family="DM Sans" font-size="10" fill="#64748b">Moderate</text>
+  <rect x="280" y="245" width="12" height="12" rx="2" fill="#ef4444"/>
+  <text x="300" y="255" font-family="DM Sans" font-size="10" fill="#64748b">Weak finality</text>
+</svg>
+<div class="diagram-caption">PayTo provides near-instant finality; cards remain reversible for months</div>
+</div>
+
+<div class="key-point">
+<div class="key-point-title">💡 Key Insight</div>
+<p style="margin-bottom:0">Finality is a double-edged sword. For legitimate collections, it's a competitive advantage. But it shifts responsibility to you—your merchant onboarding must be robust because there's no chargeback mechanism to catch problems.</p>
+</div>
+
+<!-- PUSH VS PULL -->
+<div class="concept">
+<div class="concept-title">3. Push vs Pull Payments</div>
+<p><strong>Push:</strong> Payer initiates and sends funds (bank transfers, Osko).</p>
+<p><strong>Pull:</strong> Payee initiates collection (direct debits, cards).</p>
+<p><strong>PayTo:</strong> Pull mechanism with payer-authorized agreements managed in banking apps.</p>
+</div>
+
+<!-- PUSH VS PULL DIAGRAM -->
+<div class="diagram-container">
+<div class="diagram-title">Push vs Pull Payment Models</div>
+<svg viewBox="0 0 700 350" xmlns="http://www.w3.org/2000/svg">
+  <!-- Push Payment Section -->
+  <rect x="30" y="30" width="300" height="130" rx="12" fill="#f0fdf4" stroke="#86efac" stroke-width="2"/>
+  <text x="180" y="55" text-anchor="middle" font-family="DM Sans" font-size="14" font-weight="600" fill="#16a34a">PUSH PAYMENT</text>
+  
+  <rect x="60" y="75" width="80" height="60" rx="8" fill="white" stroke="#22c55e" stroke-width="2"/>
+  <text x="100" y="100" text-anchor="middle" font-family="DM Sans" font-size="20">👤</text>
+  <text x="100" y="120" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#0f172a">Payer</text>
+  
+  <rect x="200" y="75" width="80" height="60" rx="8" fill="white" stroke="#22c55e" stroke-width="2"/>
+  <text x="240" y="100" text-anchor="middle" font-family="DM Sans" font-size="20">🏪</text>
+  <text x="240" y="120" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#0f172a">Merchant</text>
+  
+  <!-- Push arrow -->
+  <path d="M145 105 L195 105" stroke="#16a34a" stroke-width="3" fill="none" marker-end="url(#arrowGreen)"/>
+  <text x="170" y="95" text-anchor="middle" font-family="DM Sans" font-size="9" fill="#16a34a">Sends $</text>
+  
+  <text x="180" y="148" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#64748b">Payer controls when & how much</text>
+  
+  <!-- Pull Payment Section -->
+  <rect x="370" y="30" width="300" height="130" rx="12" fill="#fef3c7" stroke="#fcd34d" stroke-width="2"/>
+  <text x="520" y="55" text-anchor="middle" font-family="DM Sans" font-size="14" font-weight="600" fill="#d97706">PULL PAYMENT</text>
+  
+  <rect x="400" y="75" width="80" height="60" rx="8" fill="white" stroke="#f59e0b" stroke-width="2"/>
+  <text x="440" y="100" text-anchor="middle" font-family="DM Sans" font-size="20">👤</text>
+  <text x="440" y="120" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#0f172a">Payer</text>
+  
+  <rect x="540" y="75" width="80" height="60" rx="8" fill="white" stroke="#f59e0b" stroke-width="2"/>
+  <text x="580" y="100" text-anchor="middle" font-family="DM Sans" font-size="20">🏪</text>
+  <text x="580" y="120" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#0f172a">Merchant</text>
+  
+  <!-- Pull arrow -->
+  <path d="M535 105 L485 105" stroke="#d97706" stroke-width="3" fill="none" marker-end="url(#arrowOrange)"/>
+  <text x="510" y="95" text-anchor="middle" font-family="DM Sans" font-size="9" fill="#d97706">Takes $</text>
+  
+  <text x="520" y="148" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#64748b">Merchant initiates collection</text>
+  
+  <!-- PayTo Section -->
+  <rect x="150" y="190" width="400" height="140" rx="12" fill="#f0fdfa" stroke="#5eead4" stroke-width="2"/>
+  <text x="350" y="215" text-anchor="middle" font-family="DM Sans" font-size="14" font-weight="600" fill="#0d9488">PAYTO: Pull with Agreement</text>
+  
+  <rect x="180" y="235" width="70" height="70" rx="8" fill="white" stroke="#0d9488" stroke-width="2"/>
+  <text x="215" y="262" text-anchor="middle" font-family="DM Sans" font-size="20">👤</text>
+  <text x="215" y="282" text-anchor="middle" font-family="DM Sans" font-size="9" fill="#0f172a">Customer</text>
+  <text x="215" y="293" text-anchor="middle" font-family="DM Sans" font-size="8" fill="#64748b">Authorizes</text>
+  
+  <rect x="315" y="235" width="70" height="70" rx="8" fill="#ccfbf1" stroke="#0d9488" stroke-width="2"/>
+  <text x="350" y="260" text-anchor="middle" font-family="DM Sans" font-size="16">📱</text>
+  <text x="350" y="280" text-anchor="middle" font-family="DM Sans" font-size="9" fill="#0f172a">Bank App</text>
+  <text x="350" y="293" text-anchor="middle" font-family="DM Sans" font-size="8" fill="#64748b">Manages</text>
+  
+  <rect x="450" y="235" width="70" height="70" rx="8" fill="white" stroke="#0d9488" stroke-width="2"/>
+  <text x="485" y="262" text-anchor="middle" font-family="DM Sans" font-size="20">🏪</text>
+  <text x="485" y="282" text-anchor="middle" font-family="DM Sans" font-size="9" fill="#0f172a">Merchant</text>
+  <text x="485" y="293" text-anchor="middle" font-family="DM Sans" font-size="8" fill="#64748b">Collects</text>
+  
+  <!-- PayTo arrows -->
+  <path d="M255 270 L310 270" stroke="#0d9488" stroke-width="2" stroke-dasharray="4,2"/>
+  <path d="M390 270 L445 270" stroke="#0d9488" stroke-width="2" marker-end="url(#arrowTeal)"/>
+  
+  <text x="350" y="320" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#0d9488" font-weight="500">Customer retains visibility & control</text>
+  
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrowGreen" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#16a34a"/></marker>
+    <marker id="arrowOrange" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#d97706"/></marker>
+    <marker id="arrowTeal" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#0d9488"/></marker>
+  </defs>
+</svg>
+<div class="diagram-caption">PayTo combines pull payment efficiency with customer control via bank app agreements</div>
+</div>
+
+<h3>Comparing Payment Rails</h3>
+
+<div class="example-box">
+<div class="example-label">Scenario: A Gym Collecting Monthly Memberships</div>
+<table class="comparison-table">
+<tr>
+<th>Aspect</th>
+<th>Cards</th>
+<th>BECS Direct Debit</th>
+<th>PayTo</th>
+</tr>
+<tr>
+<td><strong>Type</strong></td>
+<td>Pull</td>
+<td>Pull</td>
+<td>Pull + Agreement</td>
+</tr>
+<tr>
+<td><strong>Clearing</strong></td>
+<td>Instant</td>
+<td>Batch (days)</td>
+<td>Real-time</td>
+</tr>
+<tr>
+<td><strong>Settlement</strong></td>
+<td>Batched later</td>
+<td>Batched later</td>
+<td>Real-time via RBA</td>
+</tr>
+<tr>
+<td><strong>Finality</strong></td>
+<td>Weak (chargebacks)</td>
+<td>Moderate (indemnity)</td>
+<td>Strong (final)</td>
+</tr>
+<tr>
+<td><strong>Customer Control</strong></td>
+<td>Limited</td>
+<td>Paper DDR</td>
+<td>Bank app management</td>
+</tr>
+</table>
+</div>
+</section>
+
+<!-- AUSTRALIAN ECOSYSTEM -->
+<section class="section">
+<h2>Australia's Payments Ecosystem</h2>
+
+<!-- ECOSYSTEM OVERVIEW DIAGRAM -->
+<div class="diagram-container">
+<div class="diagram-title">Australian Payments Ecosystem Overview</div>
+<svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Top layer: Regulators -->
+  <rect x="50" y="20" width="600" height="70" rx="8" fill="#fef2f2" stroke="#fecaca"/>
+  <text x="350" y="45" text-anchor="middle" font-family="DM Sans" font-size="12" font-weight="600" fill="#dc2626">REGULATORS & POLICY</text>
+  <rect x="80" y="55" width="100" height="28" rx="4" fill="white" stroke="#fca5a5"/>
+  <text x="130" y="73" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#0f172a">RBA / PSB</text>
+  <rect x="200" y="55" width="100" height="28" rx="4" fill="white" stroke="#fca5a5"/>
+  <text x="250" y="73" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#0f172a">ASIC</text>
+  <rect x="320" y="55" width="100" height="28" rx="4" fill="white" stroke="#fca5a5"/>
+  <text x="370" y="73" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#0f172a">AUSTRAC</text>
+  <rect x="440" y="55" width="100" height="28" rx="4" fill="white" stroke="#fca5a5"/>
+  <text x="490" y="73" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#0f172a">Treasury</text>
+  
+  <!-- Infrastructure layer -->
+  <rect x="50" y="110" width="600" height="80" rx="8" fill="#eff6ff" stroke="#bfdbfe"/>
+  <text x="350" y="130" text-anchor="middle" font-family="DM Sans" font-size="12" font-weight="600" fill="#2563eb">INFRASTRUCTURE</text>
+  <rect x="80" y="145" width="130" height="35" rx="4" fill="white" stroke="#93c5fd"/>
+  <text x="145" y="160" text-anchor="middle" font-family="DM Sans" font-size="10" font-weight="600" fill="#0f172a">NPP Platform</text>
+  <text x="145" y="173" text-anchor="middle" font-family="DM Sans" font-size="8" fill="#64748b">Operated by AP+</text>
+  <rect x="230" y="145" width="130" height="35" rx="4" fill="white" stroke="#93c5fd"/>
+  <text x="295" y="160" text-anchor="middle" font-family="DM Sans" font-size="10" font-weight="600" fill="#0f172a">RBA FSS</text>
+  <text x="295" y="173" text-anchor="middle" font-family="DM Sans" font-size="8" fill="#64748b">Settlement</text>
+  <rect x="380" y="145" width="130" height="35" rx="4" fill="white" stroke="#93c5fd"/>
+  <text x="445" y="160" text-anchor="middle" font-family="DM Sans" font-size="10" font-weight="600" fill="#0f172a">BECS / DE</text>
+  <text x="445" y="173" text-anchor="middle" font-family="DM Sans" font-size="8" fill="#64748b">AusPayNet</text>
+  <rect x="530" y="145" width="100" height="35" rx="4" fill="white" stroke="#93c5fd"/>
+  <text x="580" y="160" text-anchor="middle" font-family="DM Sans" font-size="10" font-weight="600" fill="#0f172a">Card Schemes</text>
+  <text x="580" y="173" text-anchor="middle" font-family="DM Sans" font-size="8" fill="#64748b">V/MC/eftpos</text>
+  
+  <!-- Access layer -->
+  <rect x="50" y="210" width="600" height="60" rx="8" fill="#f0fdf4" stroke="#bbf7d0"/>
+  <text x="350" y="230" text-anchor="middle" font-family="DM Sans" font-size="12" font-weight="600" fill="#16a34a">ACCESS LAYER</text>
+  <text x="350" y="250" text-anchor="middle" font-family="DM Sans" font-size="11" fill="#0f172a">Banks & NPP Participants (Sponsors)</text>
+  <text x="350" y="262" text-anchor="middle" font-family="DM Sans" font-size="9" fill="#64748b">Provide API access • Hold ESAs at RBA • Set pricing & SLAs</text>
+  
+  <!-- FairPay layer -->
+  <rect x="150" y="290" width="400" height="50" rx="8" fill="#0d9488" stroke="#0f766e" stroke-width="2"/>
+  <text x="350" y="315" text-anchor="middle" font-family="DM Sans" font-size="14" font-weight="600" fill="white">⭐ FAIRPAY</text>
+  <text x="350" y="330" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#ccfbf1">Collections Enablement Platform</text>
+  
+  <!-- Merchant layer -->
+  <rect x="50" y="360" width="600" height="35" rx="8" fill="#faf5ff" stroke="#e9d5ff"/>
+  <text x="130" y="382" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#7c3aed">SMBs</text>
+  <text x="270" y="382" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#7c3aed">B2B / SaaS</text>
+  <text x="420" y="382" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#7c3aed">Gig / Marketplaces</text>
+  <text x="570" y="382" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#7c3aed">Charities / NFPs</text>
+  
+  <!-- Connecting arrows -->
+  <path d="M350 270 L350 288" stroke="#64748b" stroke-width="2" marker-end="url(#arrowGray)"/>
+  <path d="M350 340 L350 358" stroke="#64748b" stroke-width="2" marker-end="url(#arrowGray)"/>
+  
+  <defs>
+    <marker id="arrowGray" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#64748b"/></marker>
+  </defs>
+</svg>
+<div class="diagram-caption">FairPay sits in the enablement layer, connecting merchants to infrastructure via sponsor relationships</div>
+</div>
+
+<div class="institution">
+<div class="institution-header">
+<div class="institution-name">Reserve Bank of Australia (RBA)</div>
+<div class="institution-type">Regulator & Infrastructure</div>
+</div>
+<div class="institution-role">Through its <strong>Payments System Board</strong>, sets policy for efficiency, competition, and resilience. Operates the <strong>Fast Settlement Service (FSS)</strong> for real-time NPP settlement.</div>
+<div class="institution-relevance"><strong>FairPay relevance:</strong> The RBA shapes your environment. March 2026 update signals card cost changes coming by end-March. They also focus on resilience—think about your uptime and failover.</div>
+</div>
+
+<div class="institution">
+<div class="institution-header">
+<div class="institution-name">Australian Payments Plus (AP+)</div>
+<div class="institution-type">Infrastructure Operator</div>
+</div>
+<div class="institution-role">Operates <strong>NPP "The Platform"</strong> (ISO 20022, 24/7, PayID, PayTo), <strong>eftpos</strong>, and <strong>BPAY</strong>.</div>
+<div class="institution-relevance"><strong>FairPay relevance:</strong> Fundamental to your PayTo business. You connect through a participant, but understanding the platform shapes your product possibilities.</div>
+</div>
+
+<div class="institution">
+<div class="institution-header">
+<div class="institution-name">AusPayNet</div>
+<div class="institution-type">Industry Body</div>
+</div>
+<div class="institution-role">Administers <strong>Direct Entry/BECS</strong>—legacy batch payments since the 1990s. Publishes fraud statistics.</div>
+<div class="institution-relevance"><strong>FairPay relevance:</strong> BECS is how most direct debits work today. 2030 end-date removed—you'll need compatibility for transitioning merchants.</div>
+</div>
+
+<h3>Control Points</h3>
+
+<!-- CONTROL POINTS DIAGRAM -->
+<div class="diagram-container">
+<div class="diagram-title">Where Power Sits in the Ecosystem</div>
+<svg viewBox="0 0 700 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Four control points -->
+  <rect x="30" y="40" width="145" height="140" rx="12" fill="#f0fdfa" stroke="#99f6e4" stroke-width="2"/>
+  <text x="102" y="70" text-anchor="middle" font-family="DM Sans" font-size="24">🔑</text>
+  <text x="102" y="95" text-anchor="middle" font-family="DM Sans" font-size="12" font-weight="600" fill="#0d9488">Access</text>
+  <text x="102" y="115" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#64748b">Who can connect</text>
+  <text x="102" y="130" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#64748b">to NPP? Through</text>
+  <text x="102" y="145" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#64748b">sponsors only.</text>
+  
+  <rect x="195" y="40" width="145" height="140" rx="12" fill="#fef3c7" stroke="#fcd34d" stroke-width="2"/>
+  <text x="267" y="70" text-anchor="middle" font-family="DM Sans" font-size="24">💰</text>
+  <text x="267" y="95" text-anchor="middle" font-family="DM Sans" font-size="12" font-weight="600" fill="#d97706">Pricing</text>
+  <text x="267" y="115" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#64748b">PayTo fees via</text>
+  <text x="267" y="130" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#64748b">AP+ → sponsors.</text>
+  <text x="267" y="145" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#64748b">Your margin on top.</text>
+  
+  <rect x="360" y="40" width="145" height="140" rx="12" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+  <text x="432" y="70" text-anchor="middle" font-family="DM Sans" font-size="24">📊</text>
+  <text x="432" y="95" text-anchor="middle" font-family="DM Sans" font-size="12" font-weight="600" fill="#2563eb">Data</text>
+  <text x="432" y="115" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#64748b">ISO 20022 rich</text>
+  <text x="432" y="130" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#64748b">data flows. Who</text>
+  <text x="432" y="145" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#64748b">can use it?</text>
+  
+  <rect x="525" y="40" width="145" height="140" rx="12" fill="#fef2f2" stroke="#fecaca" stroke-width="2"/>
+  <text x="597" y="70" text-anchor="middle" font-family="DM Sans" font-size="24">⚖️</text>
+  <text x="597" y="95" text-anchor="middle" font-family="DM Sans" font-size="12" font-weight="600" fill="#dc2626">Liability</text>
+  <text x="597" y="115" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#64748b">When fraud or</text>
+  <text x="597" y="130" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#64748b">disputes occur,</text>
+  <text x="597" y="145" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#64748b">who bears cost?</text>
+</svg>
+</div>
+</section>
+
+<!-- POSITIONING OPTIONS -->
+<section class="section">
+<h2>FairPay Positioning Options</h2>
+
+<!-- POSITIONING OPTIONS DIAGRAM -->
+<div class="diagram-container">
+<div class="diagram-title">Three Strategic Positioning Options</div>
+<svg viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg">
+  <!-- Option 1 -->
+  <rect x="30" y="30" width="200" height="260" rx="12" fill="#f0fdf4" stroke="#86efac" stroke-width="2"/>
+  <rect x="30" y="30" width="200" height="45" rx="12" fill="#22c55e"/>
+  <rect x="30" y="63" width="200" height="12" fill="#22c55e"/>
+  <text x="130" y="58" text-anchor="middle" font-family="DM Sans" font-size="13" font-weight="600" fill="white">Option 1</text>
+  <text x="130" y="100" text-anchor="middle" font-family="DM Sans" font-size="14" font-weight="600" fill="#0f172a">Pure API Layer</text>
+  
+  <text x="50" y="130" font-family="DM Sans" font-size="10" fill="#16a34a">✓</text>
+  <text x="65" y="130" font-family="DM Sans" font-size="10" fill="#475569">Lighter compliance</text>
+  <text x="50" y="148" font-family="DM Sans" font-size="10" fill="#16a34a">✓</text>
+  <text x="65" y="148" font-family="DM Sans" font-size="10" fill="#475569">Faster to launch</text>
+  <text x="50" y="166" font-family="DM Sans" font-size="10" fill="#16a34a">✓</text>
+  <text x="65" y="166" font-family="DM Sans" font-size="10" fill="#475569">Lower capital needs</text>
+  
+  <text x="50" y="195" font-family="DM Sans" font-size="10" fill="#dc2626">✗</text>
+  <text x="65" y="195" font-family="DM Sans" font-size="10" fill="#475569">Lower margins</text>
+  <text x="50" y="213" font-family="DM Sans" font-size="10" fill="#dc2626">✗</text>
+  <text x="65" y="213" font-family="DM Sans" font-size="10" fill="#475569">Sponsor dependent</text>
+  
+  <rect x="50" y="235" width="160" height="40" rx="6" fill="#dcfce7"/>
+  <text x="130" y="258" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#16a34a" font-weight="600">Best for: Pre-revenue</text>
+  <text x="130" y="270" text-anchor="middle" font-family="DM Sans" font-size="9" fill="#16a34a">Prove demand first</text>
+  
+  <!-- Option 2 -->
+  <rect x="250" y="30" width="200" height="260" rx="12" fill="#fef3c7" stroke="#fcd34d" stroke-width="2"/>
+  <rect x="250" y="30" width="200" height="45" rx="12" fill="#f59e0b"/>
+  <rect x="250" y="63" width="200" height="12" fill="#f59e0b"/>
+  <text x="350" y="58" text-anchor="middle" font-family="DM Sans" font-size="13" font-weight="600" fill="white">Option 2</text>
+  <text x="350" y="100" text-anchor="middle" font-family="DM Sans" font-size="14" font-weight="600" fill="#0f172a">Funds Flow Manager</text>
+  
+  <text x="270" y="130" font-family="DM Sans" font-size="10" fill="#16a34a">✓</text>
+  <text x="285" y="130" font-family="DM Sans" font-size="10" fill="#475569">More control & margin</text>
+  <text x="270" y="148" font-family="DM Sans" font-size="10" fill="#16a34a">✓</text>
+  <text x="285" y="148" font-family="DM Sans" font-size="10" fill="#475569">Product flexibility</text>
+  <text x="270" y="166" font-family="DM Sans" font-size="10" fill="#16a34a">✓</text>
+  <text x="285" y="166" font-family="DM Sans" font-size="10" fill="#475569">Manage splits/payouts</text>
+  
+  <text x="270" y="195" font-family="DM Sans" font-size="10" fill="#dc2626">✗</text>
+  <text x="285" y="195" font-family="DM Sans" font-size="10" fill="#475569">Treasury licensing</text>
+  <text x="270" y="213" font-family="DM Sans" font-size="10" fill="#dc2626">✗</text>
+  <text x="285" y="213" font-family="DM Sans" font-size="10" fill="#475569">Safeguarding required</text>
+  
+  <rect x="270" y="235" width="160" height="40" rx="6" fill="#fef9c3"/>
+  <text x="350" y="258" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#ca8a04" font-weight="600">Best for: Marketplaces</text>
+  <text x="350" y="270" text-anchor="middle" font-family="DM Sans" font-size="9" fill="#ca8a04">Gig economy, splits</text>
+  
+  <!-- Option 3 -->
+  <rect x="470" y="30" width="200" height="260" rx="12" fill="#f0fdfa" stroke="#5eead4" stroke-width="2"/>
+  <rect x="470" y="30" width="200" height="45" rx="12" fill="#0d9488"/>
+  <rect x="470" y="63" width="200" height="12" fill="#0d9488"/>
+  <text x="570" y="58" text-anchor="middle" font-family="DM Sans" font-size="13" font-weight="600" fill="white">Option 3</text>
+  <text x="570" y="100" text-anchor="middle" font-family="DM Sans" font-size="14" font-weight="600" fill="#0f172a">Vertical Specialist</text>
+  
+  <text x="490" y="130" font-family="DM Sans" font-size="10" fill="#16a34a">✓</text>
+  <text x="505" y="130" font-family="DM Sans" font-size="10" fill="#475569">Domain expertise moat</text>
+  <text x="490" y="148" font-family="DM Sans" font-size="10" fill="#16a34a">✓</text>
+  <text x="505" y="148" font-family="DM Sans" font-size="10" fill="#475569">Focused go-to-market</text>
+  <text x="490" y="166" font-family="DM Sans" font-size="10" fill="#16a34a">✓</text>
+  <text x="505" y="166" font-family="DM Sans" font-size="10" fill="#475569">Deep integrations</text>
+  
+  <text x="490" y="195" font-family="DM Sans" font-size="10" fill="#dc2626">✗</text>
+  <text x="505" y="195" font-family="DM Sans" font-size="10" fill="#475569">Smaller TAM</text>
+  <text x="490" y="213" font-family="DM Sans" font-size="10" fill="#dc2626">✗</text>
+  <text x="505" y="213" font-family="DM Sans" font-size="10" fill="#475569">Vertical knowledge req.</text>
+  
+  <rect x="490" y="235" width="160" height="40" rx="6" fill="#ccfbf1"/>
+  <text x="570" y="258" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#0d9488" font-weight="600">Best for: Deep niches</text>
+  <text x="570" y="270" text-anchor="middle" font-family="DM Sans" font-size="9" fill="#0d9488">Charities, gyms, etc.</text>
+</svg>
+</div>
+
+<div class="key-point">
+<div class="key-point-title">💡 Recommendation for FairPay</div>
+<p style="margin-bottom:0">Start with Option 1 architecture, design with Option 2 in mind. Prove demand, learn what merchants need, build compliance progressively. Use Option 3 as a go-to-market strategy even if your infrastructure is horizontal.</p>
+</div>
+</section>
+
+<!-- REQUIRED READINGS -->
+<section class="section">
+<h2>Required Readings</h2>
+<p>Primary Australian sources. Budget 45-60 minutes total.</p>
+
+<a href="https://www.auspayplus.com.au/brands/npp-the-platform" target="_blank" class="resource">
+<span class="resource-num">1</span>
+<div class="resource-content">
+<div class="resource-title">NPP "The Platform" Overview</div>
+<div class="resource-desc">How NPP works: ISO 20022, 24/7 availability, PayID, settlement via RBA FSS.</div>
+<div class="resource-time">📖 15-20 min</div>
+</div>
+</a>
+
+<a href="https://www.auspaynet.com.au/resources/direct-entry" target="_blank" class="resource">
+<span class="resource-num">2</span>
+<div class="resource-content">
+<div class="resource-title">Direct Entry / BECS Explainer</div>
+<div class="resource-desc">Understanding the legacy batch system and its limitations.</div>
+<div class="resource-time">📖 10-15 min</div>
+</div>
+</a>
+
+<a href="https://www.rba.gov.au/media-releases/2026/mr-26-06.html" target="_blank" class="resource">
+<span class="resource-num">3</span>
+<div class="resource-content">
+<div class="resource-title">Payments System Board Update: March 2026</div>
+<div class="resource-desc">Current RBA priorities and regulatory direction.</div>
+<div class="resource-time">📖 15-20 min</div>
+</div>
+</a>
+</section>
+
+<!-- QUIZ -->
+<section class="section">
+<h2>Knowledge Check</h2>
+
+<div class="quiz-container">
+<div class="quiz-intro">
+<p style="margin:0"><strong>8 questions</strong> • Open book • Instant feedback</p>
+</div>
+
+<div class="q" data-correct="1">
+<div class="q-num">Question 1 of 8</div>
+<div class="q-text">What is the key difference between clearing and settlement?</div>
+<div class="opts">
+<label><input type="radio" name="q1" value="0"><span>Clearing is for cards, settlement is for bank transfers</span></label>
+<label><input type="radio" name="q1" value="1"><span>Clearing exchanges payment instructions; settlement moves actual funds</span></label>
+<label><input type="radio" name="q1" value="2"><span>They are the same thing</span></label>
+</div>
+<div class="feedback"></div>
+</div>
+
+<div class="q" data-correct="2">
+<div class="q-num">Question 2 of 8</div>
+<div class="q-text">Where does final settlement for NPP payments occur?</div>
+<div class="opts">
+<label><input type="radio" name="q2" value="0"><span>At the merchant's bank</span></label>
+<label><input type="radio" name="q2" value="1"><span>Through Visa/Mastercard</span></label>
+<label><input type="radio" name="q2" value="2"><span>At the RBA via Exchange Settlement Accounts (ESAs)</span></label>
+</div>
+<div class="feedback"></div>
+</div>
+
+<div class="q" data-correct="0">
+<div class="q-num">Question 3 of 8</div>
+<div class="q-text">PayTo is best described as:</div>
+<div class="opts">
+<label><input type="radio" name="q3" value="0"><span>Pull payment with payer-authorized agreements</span></label>
+<label><input type="radio" name="q3" value="1"><span>Push payment initiated by the payer</span></label>
+<label><input type="radio" name="q3" value="2"><span>Batch payment processed overnight</span></label>
+</div>
+<div class="feedback"></div>
+</div>
+
+<div class="q" data-correct="1">
+<div class="q-num">Question 4 of 8</div>
+<div class="q-text">Which organization operates the NPP platform?</div>
+<div class="opts">
+<label><input type="radio" name="q4" value="0"><span>Reserve Bank of Australia</span></label>
+<label><input type="radio" name="q4" value="1"><span>Australian Payments Plus (AP+)</span></label>
+<label><input type="radio" name="q4" value="2"><span>AusPayNet</span></label>
+</div>
+<div class="feedback"></div>
+</div>
+
+<div class="q" data-correct="2">
+<div class="q-num">Question 5 of 8</div>
+<div class="q-text">What does "finality" mean in payments?</div>
+<div class="opts">
+<label><input type="radio" name="q5" value="0"><span>The payment has been initiated</span></label>
+<label><input type="radio" name="q5" value="1"><span>The merchant received notification</span></label>
+<label><input type="radio" name="q5" value="2"><span>The payment is irrevocable—neither party can reverse it</span></label>
+</div>
+<div class="feedback"></div>
+</div>
+
+<div class="q" data-correct="2">
+<div class="q-num">Question 6 of 8</div>
+<div class="q-text">What happened to the planned 2030 BECS end-date?</div>
+<div class="opts">
+<label><input type="radio" name="q6" value="0"><span>It was confirmed</span></label>
+<label><input type="radio" name="q6" value="1"><span>It was moved earlier</span></label>
+<label><input type="radio" name="q6" value="2"><span>It was removed</span></label>
+</div>
+<div class="feedback"></div>
+</div>
+
+<div class="q" data-correct="0">
+<div class="q-num">Question 7 of 8</div>
+<div class="q-text">Which messaging standard does the NPP use?</div>
+<div class="opts">
+<label><input type="radio" name="q7" value="0"><span>ISO 20022</span></label>
+<label><input type="radio" name="q7" value="1"><span>SWIFT MT</span></label>
+<label><input type="radio" name="q7" value="2"><span>Fixed-width files</span></label>
+</div>
+<div class="feedback"></div>
+</div>
+
+<div class="q" data-correct="1">
+<div class="q-num">Question 8 of 8</div>
+<div class="q-text">How would FairPay typically access the NPP?</div>
+<div class="opts">
+<label><input type="radio" name="q8" value="0"><span>Direct connection to RBA</span></label>
+<label><input type="radio" name="q8" value="1"><span>Through a sponsoring NPP participant</span></label>
+<label><input type="radio" name="q8" value="2"><span>By becoming a card scheme member</span></label>
+</div>
+<div class="feedback"></div>
+</div>
+
+<button class="btn" onclick="checkQuiz()">Check My Answers</button>
+
+<div class="score-display" id="score-display">
+<div class="score-num" id="score-num">0/8</div>
+<div class="score-label">Questions Correct</div>
+<div class="score-message" id="score-message"></div>
+</div>
+</div>
+</section>
+
+<!-- DELIVERABLE -->
+<section class="section">
+<div class="deliverable">
+<h3>📋 Week 1 Deliverable</h3>
+<p style="margin-bottom:1.5rem">Complete these for your capstone (Slides 1-2):</p>
+<ul class="checklist">
+<li><strong>Ecosystem Map (1 slide)</strong><br>Draw FairPay's position—who you connect to, where money flows, where data flows, where liability sits.</li>
+<li><strong>Positioning Hypothesis (½ page)</strong><br>Which option are you pursuing first? Why? What would change your mind?</li>
+<li><strong>Decision Backlog (list)</strong><br>3 payments decisions you need to make in the next 90 days.</li>
+</ul>
+</div>
+</section>
+
+<div class="nav-footer">
+<a href="../index.html" class="nav-btn">← Course Home</a>
+<a href="week2.html" class="nav-btn primary">Continue to Week 2 →</a>
+</div>
+
+</div>
+
+<script>
+const answers={q1:{correct:'1',exp:'Clearing exchanges instructions; settlement moves actual funds.'},q2:{correct:'2',exp:'NPP settles via RBA Fast Settlement Service in Exchange Settlement Accounts.'},q3:{correct:'0',exp:'PayTo is pull payment with payer-authorized agreements in banking apps.'},q4:{correct:'1',exp:'AP+ operates NPP. RBA operates the Fast Settlement Service.'},q5:{correct:'2',exp:'Finality means irrevocable—neither party can reverse.'},q6:{correct:'2',exp:'The 2030 end-date was removed. Transition is now market-driven.'},q7:{correct:'0',exp:'NPP uses ISO 20022 for rich, structured data.'},q8:{correct:'1',exp:'Startups access NPP through sponsoring participants.'}};
+function checkQuiz(){let s=0;document.querySelectorAll('.q').forEach((q,i)=>{const n='q'+(i+1),sel=q.querySelector('input:checked'),fb=q.querySelector('.feedback');q.querySelectorAll('label').forEach(l=>l.style.background='');if(sel){if(sel.value===answers[n].correct){s++;fb.className='feedback correct';fb.innerHTML='✓ '+answers[n].exp;sel.parentElement.style.background='rgba(22,163,74,.1)';}else{fb.className='feedback incorrect';fb.innerHTML='✗ '+answers[n].exp;sel.parentElement.style.background='rgba(234,88,12,.1)';}}});document.getElementById('score-num').textContent=s+'/8';document.getElementById('score-message').innerHTML=s>=6?'🎉 Great work! Ready for Week 2.':'📖 Review concepts and try again.';document.getElementById('score-display').classList.add('visible');}
+</script>
+</body>
+</html>

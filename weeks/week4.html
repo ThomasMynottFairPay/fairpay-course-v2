@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 4: Standards & Regulatory Mapping | FairPay CEO Course</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#ffffff;--card:#f8fafc;--elevated:#f1f5f9;--teal:#14b8a6;--teal-dim:rgba(20,184,166,.15);--orange:#f97316;--text:#0f172a;--text2:#475569;--muted:#64748b;--border:#e2e8f0}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+.nav{position:sticky;top:0;background:rgba(255,255,255,.95);border-bottom:1px solid var(--border);padding:1rem 2rem;display:flex;justify-content:space-between}.nav a{color:var(--text2);text-decoration:none}.nav a:hover{color:var(--teal)}
+.hero{padding:3rem 2rem;background:linear-gradient(180deg,rgba(20,184,166,.08),transparent);border-bottom:1px solid var(--border);text-align:center}
+.week-label{display:inline-block;font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);background:var(--teal-dim);padding:.5rem 1rem;border-radius:2rem;margin-bottom:1rem}
+h1{font-family:'Instrument Serif',serif;font-size:2.5rem;margin-bottom:1rem}.subtitle{color:var(--text2);max-width:700px;margin:0 auto}
+.container{max-width:900px;margin:0 auto;padding:2rem}.section{margin-bottom:3rem}
+h2{font-family:'Instrument Serif',serif;font-size:1.5rem;margin-bottom:1rem;color:var(--teal)}h3{font-size:1.1rem;margin:1.5rem 0 .75rem}p{margin-bottom:1rem;color:var(--text2)}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.5rem;margin-bottom:1rem}
+.concept{background:var(--elevated);border-left:3px solid var(--teal);padding:1rem;margin-bottom:1rem;border-radius:0 8px 8px 0}.concept b{color:var(--teal)}
+.timeline{background:var(--elevated);border:1px solid var(--orange);padding:.75rem 1rem;margin:.5rem 0;border-radius:8px;display:flex;gap:1rem;align-items:center}
+.timeline .date{color:var(--orange);font-weight:600;min-width:100px;font-size:.9rem}.timeline .event{color:var(--text2);font-size:.9rem}
+.resource{display:block;padding:1rem;background:var(--elevated);border:1px solid var(--border);border-radius:8px;margin-bottom:.5rem;text-decoration:none;color:var(--text)}.resource:hover{border-color:var(--teal)}.resource small{color:var(--muted)}
+.quiz{margin-top:1rem}.q{margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}.q:last-child{border:none}.q-text{font-weight:500;margin-bottom:.75rem}
+.opts label{display:block;padding:.5rem .75rem;margin:.25rem 0;background:var(--elevated);border:1px solid var(--border);border-radius:6px;cursor:pointer}.opts label:hover{border-color:var(--teal)}.opts input{margin-right:.5rem}
+.btn{background:var(--teal);color:#fff;border:none;padding:.75rem 1.5rem;border-radius:8px;cursor:pointer;font-weight:600;margin-top:1rem}#result{margin-top:1rem;padding:1rem;border-radius:8px;display:none}
+.deliverable{background:linear-gradient(135deg,rgba(20,184,166,.1),rgba(20,184,166,.02));border:1px solid var(--teal);border-radius:12px;padding:1.5rem}
+.checklist{list-style:none;padding:0}.checklist li{padding:.5rem 0;border-bottom:1px solid var(--border);color:var(--text2)}.checklist li:last-child{border:none}
+.nav-footer{display:flex;justify-content:space-between;margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border)}.nav-btn{padding:.75rem 1.5rem;background:var(--card);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text2)}.nav-btn:hover{border-color:var(--teal);color:var(--text)}
+</style>
+</head>
+<body>
+<nav class="nav"><a href="week3.html">← Week 3</a><span style="color:var(--text);font-weight:600">Week 4 of 6</span><a href="week5.html">Week 5 →</a></nav>
+<header class="hero"><span class="week-label">Week 4</span><h1>Standards & Regulatory Mapping</h1><p class="subtitle">Navigate ISO 20022, EMV, PCI DSS, and Australian regulatory requirements.</p></header>
+<div class="container">
+
+<section class="section">
+<h2>Learning Objectives</h2>
+<div class="card"><ul style="color:var(--text2);padding-left:1.5rem">
+<li>Understand key standards: ISO 20022, EMV tokenisation, PCI DSS</li>
+<li>Map Australian regulators and their relevance to FairPay</li>
+<li>Track Treasury licensing reforms and AUSTRAC obligations</li>
+<li>Build a regulatory perimeter and compliance roadmap</li>
+</ul></div>
+</section>
+
+<section class="section">
+<h2>Technical Standards</h2>
+<div class="concept"><b>ISO 20022</b><br>International standard for financial messaging. Rich, structured data with modelling methodology and central dictionary. NPP uses this—gives you reconciliation and reporting advantages over legacy formats.</div>
+<div class="concept"><b>EMV Tokenisation</b><br>Replaces card PANs with constrained tokens. If tokens are compromised, fraud value is limited. Security layer for card storage. Relevant if you handle cards as fallback.</div>
+<div class="concept"><b>EMV 3DS (3-D Secure)</b><br>Authentication for online card payments. Enables data exchange between merchant and issuer. Balances fraud prevention vs checkout friction.</div>
+<div class="concept"><b>PCI DSS v4.0</b><br>Card security standard. Future-dated requirements became mandatory 31 March 2025. As CEO: define scope, assign responsibilities, ensure audit readiness. Minimize card data handling to reduce scope.</div>
+</section>
+
+<section class="section">
+<h2>Australian Regulatory Landscape</h2>
+<div class="concept"><b>RBA / Payments System Board</b><br>Sets policy direction. Operates FSS. Current focus: card costs, surcharging, resilience. Conclusions expected end-March 2026.</div>
+<div class="concept"><b>ASIC — ePayments Code</b><br>Consumer protections for electronic payments. Currently voluntary subscription. Extended to cover NPP payments. Treasury may make mandatory via licensing reforms.</div>
+<div class="concept"><b>AUSTRAC — AML/CTF</b><br>If you provide designated services, you must enrol and maintain an AML program BEFORE providing services. Reforms adding new designated services with staggered start dates.</div>
+<div class="concept"><b>Treasury — Licensing Reforms</b><br>Payments System Modernisation Act commenced 19 Dec 2025. Tranche 1a consultation closed Nov 2025. Tranche 1b expected 2026. May capture FairPay depending on funds flow model.</div>
+</section>
+
+<section class="section">
+<h2>Key Regulatory Dates</h2>
+<div class="timeline"><span class="date">19 Dec 2025</span><span class="event">Payments System Modernisation Act commenced</span></div>
+<div class="timeline"><span class="date">31 Mar 2025</span><span class="event">PCI DSS v4.0 future-dated requirements effective</span></div>
+<div class="timeline"><span class="date">End Mar 2026</span><span class="event">RBA card costs/surcharging conclusions + timeline</span></div>
+<div class="timeline"><span class="date">31 Mar 2026</span><span class="event">AUSTRAC reforms start (some new designated services)</span></div>
+<div class="timeline"><span class="date">1 Jul 2026</span><span class="event">AUSTRAC reforms start (other new designated services)</span></div>
+<div class="timeline"><span class="date">2026</span><span class="event">Treasury Tranche 1b consultation expected</span></div>
+</section>
+
+<section class="section">
+<h2>Required Readings</h2>
+<a href="https://treasury.gov.au/policy-topics/banking-and-finance/payments-licensing-reforms" target="_blank" class="resource"><strong>1. Payments Licensing Reforms</strong><br><small>Treasury — Tranches and timeline</small></a>
+<a href="https://www.asic.gov.au/epaymentscode" target="_blank" class="resource"><strong>2. ePayments Code</strong><br><small>ASIC — Consumer protections</small></a>
+<a href="https://www.austrac.gov.au/business/new-to-austrac/your-obligations" target="_blank" class="resource"><strong>3. Your Obligations</strong><br><small>AUSTRAC — AML/CTF requirements</small></a>
+<a href="https://www.iso20022.org/about-iso-20022" target="_blank" class="resource"><strong>4. About ISO 20022</strong><br><small>ISO20022.org — Standard overview</small></a>
+</section>
+
+<section class="section">
+<h2>Knowledge Check</h2>
+<div class="card"><div class="quiz" id="quiz">
+<div class="q" data-correct="0"><div class="q-text">1. Which messaging standard does NPP use?</div><div class="opts">
+<label><input type="radio" name="q1" value="0">ISO 20022</label>
+<label><input type="radio" name="q1" value="1">SWIFT MT</label>
+<label><input type="radio" name="q1" value="2">EDI</label>
+</div></div>
+<div class="q" data-correct="1"><div class="q-text">2. When did the Payments System Modernisation Act commence?</div><div class="opts">
+<label><input type="radio" name="q2" value="0">1 January 2026</label>
+<label><input type="radio" name="q2" value="1">19 December 2025</label>
+<label><input type="radio" name="q2" value="2">1 July 2026</label>
+</div></div>
+<div class="q" data-correct="2"><div class="q-text">3. AUSTRAC obligations require you to:</div><div class="opts">
+<label><input type="radio" name="q3" value="0">Report annually after launch</label>
+<label><input type="radio" name="q3" value="1">Register within 6 months of launch</label>
+<label><input type="radio" name="q3" value="2">Enrol and have AML program BEFORE providing services</label>
+</div></div>
+</div>
+<button class="btn" onclick="checkQuiz()">Check Answers</button>
+<div id="result"></div></div>
+</section>
+
+<section class="section">
+<div class="deliverable"><h3>📋 Week 4 Deliverable</h3>
+<p>Build these for your capstone (Slide 8 + memo):</p>
+<ul class="checklist">
+<li>☐ <strong>Regulatory Perimeter Memo (2 pages):</strong> What FairPay does, whose money we touch, ASIC/AUSTRAC exposure, reform watchlist</li>
+<li>☐ <strong>Standards Checklist:</strong> ISO 20022 usage, PCI scope (if any), governance approach</li>
+<li>☐ <strong>Compliance Roadmap v1:</strong> What before launch, what builds over time</li>
+</ul></div>
+</section>
+
+<div class="nav-footer"><a href="week3.html" class="nav-btn">← Week 3</a><a href="week5.html" class="nav-btn">Week 5: Fraud & Economics →</a></div>
+</div>
+<script>
+function checkQuiz(){let s=0;document.querySelectorAll('.q').forEach(q=>{if(q.querySelector('input:checked')?.value===q.dataset.correct)s++});
+const r=document.getElementById('result');r.style.display='block';r.style.background=s>=2?'rgba(34,197,94,.15)':'rgba(249,115,22,.15)';r.innerHTML='<strong>Score: '+s+'/3</strong>';}
+</script>
+</body>
+</html>
