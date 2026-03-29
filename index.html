@@ -1,1001 +1,1150 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FairPay CEO Payments Course</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
-<style>
-:root {
-  --bg: #fafaf9;
-  --bg-card: #ffffff;
-  --sidebar-bg: #1c1917;
-  --sidebar-text: #a8a29e;
-  --sidebar-active: #ffffff;
-  --teal: #14b8a6;
-  --teal-dim: rgba(20, 184, 166, 0.1);
-  --teal-glow: rgba(20, 184, 166, 0.2);
-  --orange: #ea580c;
-  --orange-dim: rgba(234, 88, 12, 0.1);
-  --text: #1c1917;
-  --text2: #57534e;
-  --muted: #78716c;
-  --border: #e7e5e4;
-  --success: #16a34a;
-  --success-dim: rgba(22, 163, 74, 0.1);
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FairPay CEO Payments Course</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg: #fafaf9;
+      --bg-card: #ffffff;
+      --sidebar-bg: #1c1917;
+      --sidebar-text: #a8a29e;
+      --sidebar-active: #ffffff;
+      --teal: #14b8a6;
+      --teal-dim: rgba(20, 184, 166, 0.1);
+      --teal-glow: rgba(20, 184, 166, 0.2);
+      --orange: #ea580c;
+      --orange-dim: rgba(234, 88, 12, 0.1);
+      --text: #1c1917;
+      --text2: #57534e;
+      --muted: #78716c;
+      --border: #e7e5e4;
+      --success: #16a34a;
+      --success-dim: rgba(22, 163, 74, 0.1);
+    }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-body {
-  font-family: 'DM Sans', -apple-system, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.7;
-  font-size: 16px;
-  display: flex;
-  min-height: 100vh;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-/* SIDEBAR */
-.sidebar {
-  width: 280px;
-  background: var(--sidebar-bg);
-  color: var(--sidebar-text);
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  display: flex;
-  flex-direction: column;
-  z-index: 100;
-  overflow-y: auto;
-}
+    body {
+      font-family: 'DM Sans', -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 16px;
+      display: flex;
+      min-height: 100vh;
+    }
 
-.sidebar-header {
-  padding: 2rem 1.5rem;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-}
+    /* SIDEBAR */
+    .sidebar {
+      width: 280px;
+      background: var(--sidebar-bg);
+      color: var(--sidebar-text);
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+      z-index: 100;
+      overflow-y: auto;
+    }
 
-.sidebar-logo {
-  font-family: 'Instrument Serif', serif;
-  font-size: 1.5rem;
-  color: white;
-  margin-bottom: 0.25rem;
-}
+    .sidebar-header {
+      padding: 2rem 1.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
 
-.sidebar-tagline {
-  font-size: 0.8rem;
-  color: var(--sidebar-text);
-}
+    .sidebar-logo {
+      font-family: 'Instrument Serif', serif;
+      font-size: 1.5rem;
+      color: white;
+      margin-bottom: 0.25rem;
+    }
 
-.sidebar-nav {
-  flex: 1;
-  padding: 1.5rem 0;
-}
+    .sidebar-tagline {
+      font-size: 0.8rem;
+      color: var(--sidebar-text);
+    }
 
-.nav-section-label {
-  font-size: 0.65rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--sidebar-text);
-  padding: 0 1.5rem;
-  margin-bottom: 0.75rem;
-}
+    .sidebar-nav {
+      flex: 1;
+      padding: 1.5rem 0;
+    }
 
-.nav-item {
-  display: flex;
-  align-items: center;
-  gap: 0.875rem;
-  padding: 0.875rem 1.5rem;
-  color: var(--sidebar-text);
-  text-decoration: none;
-  transition: all 0.2s;
-  cursor: pointer;
-  border-left: 3px solid transparent;
-}
+    .nav-section-label {
+      font-size: 0.65rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--sidebar-text);
+      padding: 0 1.5rem;
+      margin-bottom: 0.75rem;
+    }
 
-.nav-item:hover {
-  background: rgba(255,255,255,0.05);
-  color: white;
-}
+    .nav-item {
+      display: flex;
+      align-items: center;
+      gap: 0.875rem;
+      padding: 0.875rem 1.5rem;
+      color: var(--sidebar-text);
+      text-decoration: none;
+      transition: all 0.2s;
+      cursor: pointer;
+      border-left: 3px solid transparent;
+    }
 
-.nav-item.active {
-  background: rgba(20, 184, 166, 0.15);
-  color: white;
-  border-left-color: var(--teal);
-}
+    .nav-item:hover {
+      background: rgba(255, 255, 255, 0.05);
+      color: white;
+    }
 
-.nav-item.completed .nav-num {
-  background: var(--teal);
-  color: white;
-}
+    .nav-item.active {
+      background: rgba(20, 184, 166, 0.15);
+      color: white;
+      border-left-color: var(--teal);
+    }
 
-.nav-num {
-  width: 28px;
-  height: 28px;
-  border-radius: 6px;
-  background: rgba(255,255,255,0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.8rem;
-  font-weight: 600;
-  flex-shrink: 0;
-}
+    .nav-item.completed .nav-num {
+      background: var(--teal);
+      color: white;
+    }
 
-.nav-content {
-  flex: 1;
-  min-width: 0;
-}
+    .nav-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 600;
+      flex-shrink: 0;
+    }
 
-.nav-title {
-  font-size: 0.9rem;
-  font-weight: 500;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
+    .nav-content {
+      flex: 1;
+      min-width: 0;
+    }
 
-.nav-meta {
-  font-size: 0.7rem;
-  color: var(--sidebar-text);
-  margin-top: 0.125rem;
-}
+    .nav-title {
+      font-size: 0.9rem;
+      font-weight: 500;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
 
-.nav-divider {
-  height: 1px;
-  background: rgba(255,255,255,0.08);
-  margin: 1rem 1.5rem;
-}
+    .nav-meta {
+      font-size: 0.7rem;
+      color: var(--sidebar-text);
+      margin-top: 0.125rem;
+    }
 
-.sidebar-footer {
-  padding: 1.5rem;
-  border-top: 1px solid rgba(255,255,255,0.08);
-}
+    .nav-divider {
+      height: 1px;
+      background: rgba(255, 255, 255, 0.08);
+      margin: 1rem 1.5rem;
+    }
 
-.audio-badge {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1rem;
-  background: rgba(20, 184, 166, 0.15);
-  border-radius: 8px;
-  font-size: 0.8rem;
-  color: var(--teal);
-  text-decoration: none;
-  transition: background 0.2s;
-}
+    .sidebar-footer {
+      padding: 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
 
-.audio-badge:hover {
-  background: rgba(20, 184, 166, 0.25);
-}
+    .audio-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1rem;
+      background: rgba(20, 184, 166, 0.15);
+      border-radius: 8px;
+      font-size: 0.8rem;
+      color: var(--teal);
+      text-decoration: none;
+      transition: background 0.2s;
+    }
 
-.audio-badge svg {
-  width: 18px;
-  height: 18px;
-}
+    .audio-badge:hover {
+      background: rgba(20, 184, 166, 0.25);
+    }
 
-/* MAIN CONTENT */
-.main {
-  flex: 1;
-  margin-left: 280px;
-  min-height: 100vh;
-}
+    .audio-badge svg {
+      width: 18px;
+      height: 18px;
+    }
 
-.content-frame {
-  width: 100%;
-  height: 100vh;
-  border: none;
-}
+    /* MAIN CONTENT */
+    .main {
+      flex: 1;
+      margin-left: 280px;
+      min-height: 100vh;
+    }
 
-/* WELCOME SCREEN (shown when no week selected) */
-.welcome {
-  padding: 4rem 3rem;
-  max-width: 800px;
-  margin: 0 auto;
-}
+    .content-frame {
+      width: 100%;
+      height: 100vh;
+      border: none;
+    }
 
-.welcome-header {
-  margin-bottom: 3rem;
-}
+    /* WELCOME SCREEN (shown when no week selected) */
+    .welcome {
+      padding: 4rem 3rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
 
-.welcome-label {
-  display: inline-block;
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--teal);
-  background: var(--teal-dim);
-  padding: 0.5rem 1rem;
-  border-radius: 2rem;
-  margin-bottom: 1rem;
-}
+    .welcome-header {
+      margin-bottom: 3rem;
+    }
 
-.welcome h1 {
-  font-family: 'Instrument Serif', serif;
-  font-size: 2.5rem;
-  font-weight: 400;
-  line-height: 1.2;
-  margin-bottom: 1rem;
-}
+    .welcome-label {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--teal);
+      background: var(--teal-dim);
+      padding: 0.5rem 1rem;
+      border-radius: 2rem;
+      margin-bottom: 1rem;
+    }
 
-.welcome h1 em {
-  font-style: italic;
-  color: var(--teal);
-}
+    .welcome h1 {
+      font-family: 'Instrument Serif', serif;
+      font-size: 2.5rem;
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
 
-.welcome-intro {
-  font-size: 1.1rem;
-  color: var(--text2);
-  max-width: 600px;
-}
+    .welcome h1 em {
+      font-style: italic;
+      color: var(--teal);
+    }
 
-.stats-row {
-  display: flex;
-  gap: 2rem;
-  margin: 2rem 0 3rem;
-  flex-wrap: wrap;
-}
+    .welcome-intro {
+      font-size: 1.1rem;
+      color: var(--text2);
+      max-width: 600px;
+    }
 
-.stat-item {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.9rem;
-  color: var(--muted);
-}
+    .stats-row {
+      display: flex;
+      gap: 2rem;
+      margin: 2rem 0 3rem;
+      flex-wrap: wrap;
+    }
 
-.stat-item svg {
-  width: 20px;
-  height: 20px;
-  color: var(--teal);
-}
+    .stat-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
 
-.week-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-  gap: 1.25rem;
-}
+    .stat-item svg {
+      width: 20px;
+      height: 20px;
+      color: var(--teal);
+    }
 
-.week-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 1.5rem;
-  cursor: pointer;
-  transition: all 0.2s;
-  text-decoration: none;
-  color: inherit;
-}
+    .week-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 1.25rem;
+    }
 
-.week-card:hover {
-  border-color: var(--teal);
-  box-shadow: 0 4px 20px rgba(20, 184, 166, 0.1);
-  transform: translateY(-2px);
-}
+    .week-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-decoration: none;
+      color: inherit;
+    }
 
-.week-card-header {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  margin-bottom: 1rem;
-}
+    .week-card:hover {
+      border-color: var(--teal);
+      box-shadow: 0 4px 20px rgba(20, 184, 166, 0.1);
+      transform: translateY(-2px);
+    }
 
-.week-card-num {
-  width: 40px;
-  height: 40px;
-  background: var(--teal);
-  color: white;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Instrument Serif', serif;
-  font-size: 1.25rem;
-}
+    .week-card-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
 
-.week-card-time {
-  font-size: 0.75rem;
-  color: var(--muted);
-  background: var(--bg);
-  padding: 0.25rem 0.75rem;
-  border-radius: 1rem;
-}
+    .week-card-num {
+      width: 40px;
+      height: 40px;
+      background: var(--teal);
+      color: white;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Instrument Serif', serif;
+      font-size: 1.25rem;
+    }
 
-.week-card-title {
-  font-weight: 600;
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
-  color: var(--text);
-}
+    .week-card-time {
+      font-size: 0.75rem;
+      color: var(--muted);
+      background: var(--bg);
+      padding: 0.25rem 0.75rem;
+      border-radius: 1rem;
+    }
 
-.week-card-desc {
-  font-size: 0.9rem;
-  color: var(--text2);
-  line-height: 1.5;
-}
+    .week-card-title {
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: var(--text);
+    }
 
-.week-card-footer {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-top: 1rem;
-  padding-top: 1rem;
-  border-top: 1px solid var(--border);
-}
+    .week-card-desc {
+      font-size: 0.9rem;
+      color: var(--text2);
+      line-height: 1.5;
+    }
 
-.week-card-tag {
-  font-size: 0.7rem;
-  font-weight: 500;
-  padding: 0.25rem 0.6rem;
-  border-radius: 4px;
-  background: var(--teal-dim);
-  color: var(--teal);
-}
+    .week-card-footer {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
 
-/* PODCAST SECTION */
-.podcast-section {
-  margin-top: 3rem;
-  padding: 2rem;
-  background: linear-gradient(135deg, var(--teal-dim) 0%, transparent 100%);
-  border: 1px solid rgba(20, 184, 166, 0.2);
-  border-radius: 16px;
-}
+    .week-card-tag {
+      font-size: 0.7rem;
+      font-weight: 500;
+      padding: 0.25rem 0.6rem;
+      border-radius: 4px;
+      background: var(--teal-dim);
+      color: var(--teal);
+    }
 
-.podcast-section h2 {
-  font-family: 'Instrument Serif', serif;
-  font-size: 1.5rem;
-  font-weight: 400;
-  margin-bottom: 0.5rem;
-  color: var(--text);
-}
+    /* PODCAST SECTION */
+    .podcast-section {
+      margin-top: 3rem;
+      padding: 2rem;
+      background: linear-gradient(135deg, var(--teal-dim) 0%, transparent 100%);
+      border: 1px solid rgba(20, 184, 166, 0.2);
+      border-radius: 16px;
+    }
 
-.podcast-section p {
-  color: var(--text2);
-  margin-bottom: 1.5rem;
-}
+    .podcast-section h2 {
+      font-family: 'Instrument Serif', serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+      color: var(--text);
+    }
 
-.podcast-links {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
+    .podcast-section p {
+      color: var(--text2);
+      margin-bottom: 1.5rem;
+    }
 
-.podcast-link {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.25rem;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  text-decoration: none;
-  color: var(--text);
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: all 0.2s;
-}
+    .podcast-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
 
-.podcast-link:hover {
-  border-color: var(--teal);
-  background: white;
-}
+    .podcast-link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.25rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      text-decoration: none;
+      color: var(--text);
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
 
-.podcast-link svg {
-  width: 20px;
-  height: 20px;
-}
+    .podcast-link:hover {
+      border-color: var(--teal);
+      background: white;
+    }
 
-/* MOBILE */
-@media (max-width: 900px) {
-  .sidebar {
-    transform: translateX(-100%);
-    transition: transform 0.3s;
-  }
-  
-  .sidebar.open {
-    transform: translateX(0);
-  }
-  
-  .main {
-    margin-left: 0;
-  }
-  
-  .mobile-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem 1.5rem;
-    background: var(--sidebar-bg);
-    color: white;
-  }
-  
-  .menu-toggle {
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
-    padding: 0.5rem;
-  }
-}
+    .podcast-link svg {
+      width: 20px;
+      height: 20px;
+    }
 
-@media (min-width: 901px) {
-  .mobile-header {
-    display: none;
-  }
-}
-</style>
+    /* MOBILE */
+    @media (max-width: 900px) {
+      .sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s;
+      }
+
+      .sidebar.open {
+        transform: translateX(0);
+      }
+
+      .main {
+        margin-left: 0;
+      }
+
+      .mobile-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 1.5rem;
+        background: var(--sidebar-bg);
+        color: white;
+      }
+
+      .menu-toggle {
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+        padding: 0.5rem;
+      }
+    }
+
+    @media (min-width: 901px) {
+      .mobile-header {
+        display: none;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<!-- SIDEBAR -->
-<aside class="sidebar" id="sidebar">
-  <div class="sidebar-header">
-    <div class="sidebar-logo">FairPay</div>
-    <div class="sidebar-tagline">CEO Payments Course</div>
-  </div>
-  
-  <nav class="sidebar-nav">
-    <div class="nav-section-label">Course Modules</div>
-    
-    <a class="nav-item active" data-week="welcome" onclick="loadContent('welcome')">
-      <div class="nav-num">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-          <polyline points="9,22 9,12 15,12 15,22"/>
-        </svg>
-      </div>
-      <div class="nav-content">
-        <div class="nav-title">Dashboard</div>
-        <div class="nav-meta">Course overview</div>
-      </div>
-    </a>
-    
-    <div class="nav-divider"></div>
-    
-    <a class="nav-item" data-week="1" onclick="loadContent('week1')">
-      <div class="nav-num">1</div>
-      <div class="nav-content">
-        <div class="nav-title">Foundations & Ecosystem</div>
-        <div class="nav-meta">~4.5 hrs</div>
-      </div>
-    </a>
-    
-    <a class="nav-item" data-week="2" onclick="loadContent('week2')">
-      <div class="nav-num">2</div>
-      <div class="nav-content">
-        <div class="nav-title">Rails Selection & A2A</div>
-        <div class="nav-meta">~4.5 hrs</div>
-      </div>
-    </a>
-    
-    <a class="nav-item" data-week="3" onclick="loadContent('week3')">
-      <div class="nav-num">3</div>
-      <div class="nav-content">
-        <div class="nav-title">Cards & Processing Stack</div>
-        <div class="nav-meta">~4.5 hrs</div>
-      </div>
-    </a>
-    
-    <a class="nav-item" data-week="4" onclick="loadContent('week4')">
-      <div class="nav-num">4</div>
-      <div class="nav-content">
-        <div class="nav-title">Standards & Regulation</div>
-        <div class="nav-meta">~4.5 hrs</div>
-      </div>
-    </a>
-    
-    <a class="nav-item" data-week="5" onclick="loadContent('week5')">
-      <div class="nav-num">5</div>
-      <div class="nav-content">
-        <div class="nav-title">Fraud, Economics & Ops</div>
-        <div class="nav-meta">~4.5 hrs</div>
-      </div>
-    </a>
-    
-    <a class="nav-item" data-week="6" onclick="loadContent('week6')">
-      <div class="nav-num">6</div>
-      <div class="nav-content">
-        <div class="nav-title">Partnerships & Capstone</div>
-        <div class="nav-meta">~4.5 hrs</div>
-      </div>
-    </a>
-    
-    <div class="nav-divider"></div>
-    <div class="nav-section-label">Resources</div>
-    
-    <a class="nav-item" href="podcast.html" target="_blank">
-      <div class="nav-num">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
-          <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
-          <line x1="12" y1="19" x2="12" y2="23"/>
-          <line x1="8" y1="23" x2="16" y2="23"/>
-        </svg>
-      </div>
-      <div class="nav-content">
-        <div class="nav-title">Audio Summaries</div>
-        <div class="nav-meta">Podcast feed</div>
-      </div>
-    </a>
-  </nav>
-  
-  <div class="sidebar-footer">
-    <a href="feed.xml" class="audio-badge" target="_blank">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M4 11a9 9 0 0 1 9 9"/>
-        <path d="M4 4a16 16 0 0 1 16 16"/>
-        <circle cx="5" cy="19" r="1"/>
-      </svg>
-      Subscribe to RSS Feed
-    </a>
-  </div>
-</aside>
-
-<!-- MOBILE HEADER -->
-<div class="mobile-header">
-  <span style="font-family:'Instrument Serif',serif;font-size:1.25rem">FairPay</span>
-  <button class="menu-toggle" onclick="toggleSidebar()">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <line x1="3" y1="12" x2="21" y2="12"/>
-      <line x1="3" y1="6" x2="21" y2="6"/>
-      <line x1="3" y1="18" x2="21" y2="18"/>
-    </svg>
-  </button>
-</div>
-
-<!-- MAIN CONTENT AREA -->
-<main class="main" id="main">
-  <!-- Welcome/Dashboard shown by default -->
-  <div class="welcome" id="welcome-content">
-    <div class="welcome-header">
-      <span class="welcome-label">Six-Week Executive Program</span>
-      <h1>Master <em>Payments</em> Strategy</h1>
-      <p class="welcome-intro">A comprehensive education in Australian payments infrastructure, designed for the CEO building a PayTo collections platform.</p>
-      
-      <div class="stats-row">
-        <div class="stat-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-            <line x1="16" y1="2" x2="16" y2="6"/>
-            <line x1="8" y1="2" x2="8" y2="6"/>
-            <line x1="3" y1="10" x2="21" y2="10"/>
-          </svg>
-          6 weeks part-time
-        </div>
-        <div class="stat-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="10"/>
-            <polyline points="12,6 12,12 16,14"/>
-          </svg>
-          ~4.5 hrs/week
-        </div>
-        <div class="stat-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
-            <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
-          </svg>
-          Audio prep included
-        </div>
-        <div class="stat-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-            <polyline points="22,4 12,14.01 9,11.01"/>
-          </svg>
-          Capstone project
-        </div>
-      </div>
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo">FairPay</div>
+      <div class="sidebar-tagline">CEO Payments Course</div>
     </div>
-    
-    <h2 style="font-family:'Instrument Serif',serif;font-size:1.5rem;margin-bottom:1.25rem;color:var(--text)">Course Modules</h2>
-    
-    <div class="week-cards">
-      <div class="week-card" onclick="loadContent('week1')">
-        <div class="week-card-header">
-          <div class="week-card-num">1</div>
-          <span class="week-card-time">~4.5 hrs</span>
-        </div>
-        <div class="week-card-title">Foundations & Ecosystem Mapping</div>
-        <div class="week-card-desc">Build the mental model every payments decision depends on. Clearing vs settlement, finality, push vs pull.</div>
-        <div class="week-card-footer">
-          <span class="week-card-tag">Core Concepts</span>
-          <span class="week-card-tag">Ecosystem Map</span>
-        </div>
-      </div>
-      
-      <div class="week-card" onclick="loadContent('week2')">
-        <div class="week-card-header">
-          <div class="week-card-num">2</div>
-          <span class="week-card-time">~4.5 hrs</span>
-        </div>
-        <div class="week-card-title">Rails Selection & Account-to-Account</div>
-        <div class="week-card-desc">Deep dive into NPP, PayTo, and BECS. Apply the 8-criteria framework to build your rail decision matrix.</div>
-        <div class="week-card-footer">
-          <span class="week-card-tag">NPP/PayTo</span>
-          <span class="week-card-tag">Decision Matrix</span>
-        </div>
-      </div>
-      
-      <div class="week-card" onclick="loadContent('week3')">
-        <div class="week-card-header">
-          <div class="week-card-num">3</div>
-          <span class="week-card-time">~4.5 hrs</span>
-        </div>
-        <div class="week-card-title">Cards & Processing Stack</div>
-        <div class="week-card-desc">Understand card economics and map FairPay's technical architecture with build vs partner decisions.</div>
-        <div class="week-card-footer">
-          <span class="week-card-tag">Card Economics</span>
-          <span class="week-card-tag">Architecture</span>
-        </div>
-      </div>
-      
-      <div class="week-card" onclick="loadContent('week4')">
-        <div class="week-card-header">
-          <div class="week-card-num">4</div>
-          <span class="week-card-time">~4.5 hrs</span>
-        </div>
-        <div class="week-card-title">Standards & Regulatory Mapping</div>
-        <div class="week-card-desc">Navigate ISO 20022, EMV, PCI DSS, and map Australian regulatory requirements for FairPay.</div>
-        <div class="week-card-footer">
-          <span class="week-card-tag">Compliance</span>
-          <span class="week-card-tag">Regulation</span>
-        </div>
-      </div>
-      
-      <div class="week-card" onclick="loadContent('week5')">
-        <div class="week-card-header">
-          <div class="week-card-num">5</div>
-          <span class="week-card-time">~4.5 hrs</span>
-        </div>
-        <div class="week-card-title">Fraud, Economics & Integration</div>
-        <div class="week-card-desc">Build your risk register, unit economics model, and design reconciliation workflows.</div>
-        <div class="week-card-footer">
-          <span class="week-card-tag">Risk Register</span>
-          <span class="week-card-tag">Unit Economics</span>
-        </div>
-      </div>
-      
-      <div class="week-card" onclick="loadContent('week6')">
-        <div class="week-card-header">
-          <div class="week-card-num">6</div>
-          <span class="week-card-time">~4.5 hrs</span>
-        </div>
-        <div class="week-card-title">Partnerships, Trends & Capstone</div>
-        <div class="week-card-desc">Finalize partner strategy and complete your FairPay Payments Strategy Pack.</div>
-        <div class="week-card-footer">
-          <span class="week-card-tag">Partnerships</span>
-          <span class="week-card-tag">Capstone</span>
-        </div>
-      </div>
-    </div>
-    
-    <div class="podcast-section">
-      <h2>🎧 Audio Prep Summaries</h2>
-      <p>Listen to 15-20 minute audio overviews before each week. Perfect for your commute or gym session. Subscribe via your favourite podcast app.</p>
-      <div class="podcast-links">
-        <a href="feed.xml" class="podcast-link" target="_blank">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M4 11a9 9 0 0 1 9 9"/>
-            <path d="M4 4a16 16 0 0 1 16 16"/>
-            <circle cx="5" cy="19" r="1"/>
+
+    <nav class="sidebar-nav">
+      <div class="nav-section-label">Course Modules</div>
+
+      <a class="nav-item active" data-week="welcome" onclick="loadContent('welcome')">
+        <div class="nav-num">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+            <polyline points="9,22 9,12 15,12 15,22" />
           </svg>
-          RSS Feed
-        </a>
-        <a href="podcast.html" class="podcast-link">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
-            <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
-            <line x1="12" y1="19" x2="12" y2="23"/>
+        </div>
+        <div class="nav-content">
+          <div class="nav-title">Dashboard</div>
+          <div class="nav-meta">Course overview</div>
+        </div>
+      </a>
+
+      <div class="nav-divider"></div>
+
+      <a class="nav-item" data-week="1" onclick="loadContent('week1')">
+        <div class="nav-num">1</div>
+        <div class="nav-content">
+          <div class="nav-title">Foundations & Ecosystem</div>
+          <div class="nav-meta">~4.5 hrs</div>
+        </div>
+      </a>
+
+      <a class="nav-item" data-week="2" onclick="loadContent('week2')">
+        <div class="nav-num">2</div>
+        <div class="nav-content">
+          <div class="nav-title">Rails Selection & A2A</div>
+          <div class="nav-meta">~4.5 hrs</div>
+        </div>
+      </a>
+
+      <a class="nav-item" data-week="3" onclick="loadContent('week3')">
+        <div class="nav-num">3</div>
+        <div class="nav-content">
+          <div class="nav-title">Cards & Processing Stack</div>
+          <div class="nav-meta">~4.5 hrs</div>
+        </div>
+      </a>
+
+      <a class="nav-item" data-week="4" onclick="loadContent('week4')">
+        <div class="nav-num">4</div>
+        <div class="nav-content">
+          <div class="nav-title">Standards & Regulation</div>
+          <div class="nav-meta">~4.5 hrs</div>
+        </div>
+      </a>
+
+      <a class="nav-item" data-week="5" onclick="loadContent('week5')">
+        <div class="nav-num">5</div>
+        <div class="nav-content">
+          <div class="nav-title">Fraud, Economics & Ops</div>
+          <div class="nav-meta">~4.5 hrs</div>
+        </div>
+      </a>
+
+      <a class="nav-item" data-week="6" onclick="loadContent('week6')">
+        <div class="nav-num">6</div>
+        <div class="nav-content">
+          <div class="nav-title">Partnerships & Capstone</div>
+          <div class="nav-meta">~4.5 hrs</div>
+        </div>
+      </a>
+
+      <div class="nav-divider"></div>
+      <div class="nav-section-label">Resources</div>
+
+      <a class="nav-item" href="podcast.html" target="_blank">
+        <div class="nav-num">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z" />
+            <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
+            <line x1="12" y1="19" x2="12" y2="23" />
+            <line x1="8" y1="23" x2="16" y2="23" />
           </svg>
-          All Episodes
-        </a>
-      </div>
-    </div>
-  </div>
-  
-  <!-- iframe for loading week content -->
-  <iframe class="content-frame" id="content-frame" style="display:none"></iframe>
-</main>
+        </div>
+        <div class="nav-content">
+          <div class="nav-title">Audio Summaries</div>
+          <div class="nav-meta">Podcast feed</div>
+        </div>
+      </a>
+    </nav>
 
-<script>
-function loadContent(page) {
-  const welcomeContent = document.getElementById('welcome-content');
-  const contentFrame = document.getElementById('content-frame');
-  const navItems = document.querySelectorAll('.nav-item');
-  
-  // Update active state
-  navItems.forEach(item => {
-    item.classList.remove('active');
-    if (item.dataset.week === page || (page === 'welcome' && item.dataset.week === 'welcome')) {
-      item.classList.add('active');
-    }
-  });
-  
-  if (page === 'welcome') {
-    welcomeContent.style.display = 'block';
-    contentFrame.style.display = 'none';
-  } else {
-    welcomeContent.style.display = 'none';
-    contentFrame.style.display = 'block';
-    contentFrame.src = `weeks/${page}.html`;
-  }
-  
-  // Close mobile sidebar
-  document.getElementById('sidebar').classList.remove('open');
-}
-
-function toggleSidebar() {
-  document.getElementById('sidebar').classList.toggle('open');
-}
-
-// Handle iframe navigation messages
-window.addEventListener('message', function(e) {
-  if (e.data && e.data.type === 'navigate') {
-    loadContent(e.data.page);
-  }
-});
-</script>
-
-<!-- CHATBOT UI -->
-<style>
-.chat-widget {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  z-index: 1000;
-  font-family: 'DM Sans', sans-serif;
-}
-.chat-toggle {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: var(--teal);
-  color: white;
-  border: none;
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(20, 184, 166, 0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.2s;
-}
-.chat-toggle:hover {
-  transform: scale(1.05);
-}
-.chat-toggle svg {
-  width: 28px;
-  height: 28px;
-}
-.chat-window {
-  position: absolute;
-  bottom: 80px;
-  right: 0;
-  width: 350px;
-  height: 500px;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-  display: none;
-  flex-direction: column;
-  overflow: hidden;
-  transition: all 0.3s;
-}
-.chat-window.open {
-  display: flex;
-}
-.chat-header {
-  background: var(--sidebar-bg);
-  color: white;
-  padding: 1rem;
-  font-family: 'Instrument Serif', serif;
-  font-size: 1.25rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.chat-close {
-  background: none;
-  border: none;
-  color: var(--sidebar-text);
-  cursor: pointer;
-}
-.chat-close:hover {
-  color: white;
-}
-.chat-messages {
-  flex: 1;
-  padding: 1rem;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-.msg {
-  max-width: 85%;
-  padding: 0.75rem 1rem;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  line-height: 1.5;
-}
-.msg.user {
-  background: var(--teal);
-  color: white;
-  align-self: flex-end;
-  border-bottom-right-radius: 2px;
-}
-.msg.ai {
-  background: var(--bg);
-  color: var(--text);
-  border: 1px solid var(--border);
-  align-self: flex-start;
-  border-bottom-left-radius: 2px;
-}
-.chat-input-area {
-  padding: 1rem;
-  border-top: 1px solid var(--border);
-  display: flex;
-  gap: 0.5rem;
-  background: var(--bg-card);
-}
-.chat-input {
-  flex: 1;
-  padding: 0.75rem;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  outline: none;
-  font-family: inherit;
-  font-size: 0.9rem;
-}
-.chat-input:focus {
-  border-color: var(--teal);
-}
-.chat-submit {
-  background: var(--teal);
-  color: white;
-  border: none;
-  border-radius: 8px;
-  padding: 0 1rem;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.chat-submit:hover {
-  opacity: 0.9;
-}
-.chat-submit svg {
-  width: 18px;
-  height: 18px;
-}
-.typing-indicator {
-  display: none;
-  align-self: flex-start;
-  color: var(--muted);
-  font-size: 0.8rem;
-  font-style: italic;
-  padding: 0.5rem 1rem;
-  margin-top: -0.5rem;
-}
-/* Mobile adaptation */
-@media (max-width: 480px) {
-  .chat-window {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    border-radius: 0;
-    bottom: auto;
-    right: auto;
-    z-index: 1001;
-  }
-}
-</style>
-
-<div class="chat-widget">
-  <div class="chat-window" id="chatWindow">
-    <div class="chat-header">
-      FairPay AI Tutor
-      <button class="chat-close" onclick="toggleChat()">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
-      </button>
-    </div>
-    <div class="chat-messages" id="chatMessages">
-      <div class="msg ai">Hello! I'm your FairPay course tutor. I've read all the materials—what would you like to know about the payments ecosystem?</div>
-      <div class="typing-indicator" id="typingIndicator">Tutor is typing...</div>
-    </div>
-    <div class="chat-input-area">
-      <input type="text" class="chat-input" id="chatInput" placeholder="Ask a question..." onkeypress="handleChatKey(event)">
-      <button class="chat-submit" onclick="sendChatMessage()">
+    <div class="sidebar-footer">
+      <a href="feed.xml" class="audio-badge" target="_blank">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <line x1="22" y1="2" x2="11" y2="13"></line>
-          <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          <path d="M4 11a9 9 0 0 1 9 9" />
+          <path d="M4 4a16 16 0 0 1 16 16" />
+          <circle cx="5" cy="19" r="1" />
         </svg>
-      </button>
+        Subscribe to RSS Feed
+      </a>
     </div>
+  </aside>
+
+  <!-- MOBILE HEADER -->
+  <div class="mobile-header">
+    <span style="font-family:'Instrument Serif',serif;font-size:1.25rem">FairPay</span>
+    <button class="menu-toggle" onclick="toggleSidebar()">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="12" x2="21" y2="12" />
+        <line x1="3" y1="6" x2="21" y2="6" />
+        <line x1="3" y1="18" x2="21" y2="18" />
+      </svg>
+    </button>
   </div>
-  <button class="chat-toggle" onclick="toggleChat()">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
-    </svg>
-  </button>
-</div>
 
-<script>
-function toggleChat() {
-  document.getElementById('chatWindow').classList.toggle('open');
-  if (document.getElementById('chatWindow').classList.contains('open')) {
-    document.getElementById('chatInput').focus();
-  }
-}
+  <!-- MAIN CONTENT AREA -->
+  <main class="main" id="main">
+    <!-- Welcome/Dashboard shown by default -->
+    <div class="welcome" id="welcome-content">
+      <div class="welcome-header">
+        <span class="welcome-label">Six-Week Executive Program</span>
+        <h1>Master <em>Payments</em> Strategy</h1>
+        <p class="welcome-intro">A comprehensive education in Australian payments infrastructure, designed for the CEO
+          building a PayTo collections platform.</p>
 
-function handleChatKey(e) {
-  if (e.key === 'Enter') {
-    sendChatMessage();
-  }
-}
+        <div class="stats-row">
+          <div class="stat-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+              <line x1="16" y1="2" x2="16" y2="6" />
+              <line x1="8" y1="2" x2="8" y2="6" />
+              <line x1="3" y1="10" x2="21" y2="10" />
+            </svg>
+            6 weeks part-time
+          </div>
+          <div class="stat-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10" />
+              <polyline points="12,6 12,12 16,14" />
+            </svg>
+            ~4.5 hrs/week
+          </div>
+          <div class="stat-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z" />
+              <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
+            </svg>
+            Audio prep included
+          </div>
+          <div class="stat-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+              <polyline points="22,4 12,14.01 9,11.01" />
+            </svg>
+            Capstone project
+          </div>
+        </div>
+      </div>
 
-async function sendChatMessage() {
-  const input = document.getElementById('chatInput');
-  const text = input.value.trim();
-  if (!text) return;
+      <h2 style="font-family:'Instrument Serif',serif;font-size:1.5rem;margin-bottom:1.25rem;color:var(--text)">Course
+        Modules</h2>
 
-  const msgsDiv = document.getElementById('chatMessages');
-  const typing = document.getElementById('typingIndicator');
+      <div class="week-cards">
+        <div class="week-card" onclick="loadContent('week1')">
+          <div class="week-card-header">
+            <div class="week-card-num">1</div>
+            <span class="week-card-time">~4.5 hrs</span>
+          </div>
+          <div class="week-card-title">Foundations & Ecosystem Mapping</div>
+          <div class="week-card-desc">Build the mental model every payments decision depends on. Clearing vs settlement,
+            finality, push vs pull.</div>
+          <div class="week-card-footer">
+            <span class="week-card-tag">Core Concepts</span>
+            <span class="week-card-tag">Ecosystem Map</span>
+          </div>
+        </div>
 
-  // Insert user message
-  const userMsg = document.createElement('div');
-  userMsg.className = 'msg user';
-  userMsg.textContent = text;
-  msgsDiv.insertBefore(userMsg, typing);
-  
-  input.value = '';
-  msgsDiv.scrollTop = msgsDiv.scrollHeight;
+        <div class="week-card" onclick="loadContent('week2')">
+          <div class="week-card-header">
+            <div class="week-card-num">2</div>
+            <span class="week-card-time">~4.5 hrs</span>
+          </div>
+          <div class="week-card-title">Rails Selection & Account-to-Account</div>
+          <div class="week-card-desc">Deep dive into NPP, PayTo, and BECS. Apply the 8-criteria framework to build your
+            rail decision matrix.</div>
+          <div class="week-card-footer">
+            <span class="week-card-tag">NPP/PayTo</span>
+            <span class="week-card-tag">Decision Matrix</span>
+          </div>
+        </div>
 
-  // Show typing
-  typing.style.display = 'block';
-  msgsDiv.scrollTop = msgsDiv.scrollHeight;
+        <div class="week-card" onclick="loadContent('week3')">
+          <div class="week-card-header">
+            <div class="week-card-num">3</div>
+            <span class="week-card-time">~4.5 hrs</span>
+          </div>
+          <div class="week-card-title">Cards & Processing Stack</div>
+          <div class="week-card-desc">Understand card economics and map FairPay's technical architecture with build vs
+            partner decisions.</div>
+          <div class="week-card-footer">
+            <span class="week-card-tag">Card Economics</span>
+            <span class="week-card-tag">Architecture</span>
+          </div>
+        </div>
 
-  try {
-    const res = await fetch('/api/chat', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ messages: text })
-    });
+        <div class="week-card" onclick="loadContent('week4')">
+          <div class="week-card-header">
+            <div class="week-card-num">4</div>
+            <span class="week-card-time">~4.5 hrs</span>
+          </div>
+          <div class="week-card-title">Standards & Regulatory Mapping</div>
+          <div class="week-card-desc">Navigate ISO 20022, EMV, PCI DSS, and map Australian regulatory requirements for
+            FairPay.</div>
+          <div class="week-card-footer">
+            <span class="week-card-tag">Compliance</span>
+            <span class="week-card-tag">Regulation</span>
+          </div>
+        </div>
 
-    const data = await res.json();
-    
-    typing.style.display = 'none';
+        <div class="week-card" onclick="loadContent('week5')">
+          <div class="week-card-header">
+            <div class="week-card-num">5</div>
+            <span class="week-card-time">~4.5 hrs</span>
+          </div>
+          <div class="week-card-title">Fraud, Economics & Integration</div>
+          <div class="week-card-desc">Build your risk register, unit economics model, and design reconciliation
+            workflows.</div>
+          <div class="week-card-footer">
+            <span class="week-card-tag">Risk Register</span>
+            <span class="week-card-tag">Unit Economics</span>
+          </div>
+        </div>
 
-    if (data.error) {
-      throw new Error(data.error);
+        <div class="week-card" onclick="loadContent('week6')">
+          <div class="week-card-header">
+            <div class="week-card-num">6</div>
+            <span class="week-card-time">~4.5 hrs</span>
+          </div>
+          <div class="week-card-title">Partnerships, Trends & Capstone</div>
+          <div class="week-card-desc">Finalize partner strategy and complete your FairPay Payments Strategy Pack.</div>
+          <div class="week-card-footer">
+            <span class="week-card-tag">Partnerships</span>
+            <span class="week-card-tag">Capstone</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="podcast-section">
+        <h2>🎧 Audio Prep Summaries</h2>
+        <p>Listen to 15-20 minute audio overviews before each week. Perfect for your commute or gym session. Subscribe
+          via your favourite podcast app.</p>
+        <div class="podcast-links">
+          <a href="feed.xml" class="podcast-link" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 11a9 9 0 0 1 9 9" />
+              <path d="M4 4a16 16 0 0 1 16 16" />
+              <circle cx="5" cy="19" r="1" />
+            </svg>
+            RSS Feed
+          </a>
+          <a href="podcast.html" class="podcast-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z" />
+              <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
+              <line x1="12" y1="19" x2="12" y2="23" />
+            </svg>
+            All Episodes
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- iframe for loading week content -->
+    <iframe class="content-frame" id="content-frame" style="display:none"></iframe>
+  </main>
+
+  <script>
+    function loadContent(page) {
+      const welcomeContent = document.getElementById('welcome-content');
+      const contentFrame = document.getElementById('content-frame');
+      const navItems = document.querySelectorAll('.nav-item');
+
+      // Update active state
+      navItems.forEach(item => {
+        item.classList.remove('active');
+        if (item.dataset.week === page || (page === 'welcome' && item.dataset.week === 'welcome')) {
+          item.classList.add('active');
+        }
+      });
+
+      if (page === 'welcome') {
+        welcomeContent.style.display = 'block';
+        contentFrame.style.display = 'none';
+      } else {
+        welcomeContent.style.display = 'none';
+        contentFrame.style.display = 'block';
+        contentFrame.src = `weeks/${page}.html`;
+      }
+
+      // Close mobile sidebar
+      document.getElementById('sidebar').classList.remove('open');
+
+      // AUDIO PLAYER INTEGRATION
+      const audioBar = document.getElementById('audioPlayerFixed');
+      const audioEl = document.getElementById('courseAudio');
+      const titleEl = document.getElementById('audioPlayerTitle');
+      if (audioBar && window.podcastEpisodes) {
+        let matchedEp = null;
+        if (page.startsWith('week')) {
+          const weekNum = page.replace('week', '');
+          matchedEp = window.podcastEpisodes.find(e => e.title.toLowerCase().includes(`week ${weekNum}`));
+        }
+        if (matchedEp) {
+          audioBar.classList.add('open');
+          titleEl.innerText = matchedEp.title;
+          if (audioEl.src !== matchedEp.audio_url) {
+            audioEl.src = matchedEp.audio_url;
+          }
+        } else {
+          audioBar.classList.remove('open');
+          audioEl.pause();
+        }
+      }
     }
 
-    const aiMsg = document.createElement('div');
-    aiMsg.className = 'msg ai';
-    aiMsg.textContent = data.response || "Sorry, I couldn't generate a response.";
-    msgsDiv.insertBefore(aiMsg, typing);
-  } catch (err) {
-    typing.style.display = 'none';
-    const errorMsg = document.createElement('div');
-    errorMsg.className = 'msg ai';
-    errorMsg.style.color = 'var(--orange)';
-    errorMsg.textContent = "Error communicating with AI tutor.";
-    msgsDiv.insertBefore(errorMsg, typing);
-  }
-  
-  msgsDiv.scrollTop = msgsDiv.scrollHeight;
-}
-</script>
+    // Fetch podcast episodes on load
+    window.podcastEpisodes = [];
+    fetch('/api/podcast')
+      .then(res => res.json())
+      .then(data => {
+        if (Array.isArray(data)) {
+          window.podcastEpisodes = data;
+        }
+      })
+      .catch(err => console.error("Error fetching podcast", err));
+
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+    }
+
+    // Handle iframe navigation messages
+    window.addEventListener('message', function (e) {
+      if (e.data && e.data.type === 'navigate') {
+        loadContent(e.data.page);
+      }
+    });
+  </script>
+
+  <!-- AUDIO PLAYER UI -->
+  <style>
+    .audio-player-fixed {
+      position: fixed;
+      bottom: 0;
+      left: 280px;
+      right: 0;
+      background: var(--bg-card);
+      border-top: 1px solid var(--border);
+      padding: 1rem 2rem;
+      z-index: 90;
+      display: none;
+      align-items: center;
+      gap: 1.5rem;
+      box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .audio-player-fixed.open {
+      display: flex;
+    }
+
+    .audio-player-fixed audio {
+      flex: 1;
+      max-width: 600px;
+    }
+
+    .audio-player-info {
+      display: flex;
+      flex-direction: column;
+      min-width: 250px;
+    }
+
+    .audio-player-label {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--teal);
+      font-weight: 600;
+    }
+
+    .audio-player-title {
+      font-family: 'Instrument Serif', serif;
+      font-size: 1.15rem;
+      color: var(--text);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    @media (max-width: 900px) {
+      .audio-player-fixed {
+        left: 0;
+        padding: 1rem;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.5rem;
+      }
+
+      .audio-player-fixed audio {
+        max-width: 100%;
+      }
+    }
+  </style>
+
+  <div class="audio-player-fixed" id="audioPlayerFixed">
+    <div class="audio-player-info">
+      <span class="audio-player-label">Audio Lecture</span>
+      <span class="audio-player-title" id="audioPlayerTitle">Episode Title</span>
+    </div>
+    <audio id="courseAudio" controls controlsList="nodownload"></audio>
+  </div>
+
+  <!-- CHATBOT UI -->
+  <style>
+    .chat-widget {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 1000;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .chat-toggle {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: var(--teal);
+      color: white;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(20, 184, 166, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s;
+    }
+
+    .chat-toggle:hover {
+      transform: scale(1.05);
+    }
+
+    .chat-toggle svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    .chat-window {
+      position: absolute;
+      bottom: 80px;
+      right: 0;
+      width: 350px;
+      height: 500px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+      transition: all 0.3s;
+    }
+
+    .chat-window.open {
+      display: flex;
+    }
+
+    .chat-header {
+      background: var(--sidebar-bg);
+      color: white;
+      padding: 1rem;
+      font-family: 'Instrument Serif', serif;
+      font-size: 1.25rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .chat-close {
+      background: none;
+      border: none;
+      color: var(--sidebar-text);
+      cursor: pointer;
+    }
+
+    .chat-close:hover {
+      color: white;
+    }
+
+    .chat-messages {
+      flex: 1;
+      padding: 1rem;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .msg {
+      max-width: 85%;
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .msg.user {
+      background: var(--teal);
+      color: white;
+      align-self: flex-end;
+      border-bottom-right-radius: 2px;
+    }
+
+    .msg.ai {
+      background: var(--bg);
+      color: var(--text);
+      border: 1px solid var(--border);
+      align-self: flex-start;
+      border-bottom-left-radius: 2px;
+    }
+
+    .chat-input-area {
+      padding: 1rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      gap: 0.5rem;
+      background: var(--bg-card);
+    }
+
+    .chat-input {
+      flex: 1;
+      padding: 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      outline: none;
+      font-family: inherit;
+      font-size: 0.9rem;
+    }
+
+    .chat-input:focus {
+      border-color: var(--teal);
+    }
+
+    .chat-submit {
+      background: var(--teal);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 0 1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .chat-submit:hover {
+      opacity: 0.9;
+    }
+
+    .chat-submit svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .typing-indicator {
+      display: none;
+      align-self: flex-start;
+      color: var(--muted);
+      font-size: 0.8rem;
+      font-style: italic;
+      padding: 0.5rem 1rem;
+      margin-top: -0.5rem;
+    }
+
+    /* Mobile adaptation */
+    @media (max-width: 480px) {
+      .chat-window {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0;
+        bottom: auto;
+        right: auto;
+        z-index: 1001;
+      }
+    }
+  </style>
+
+  <div class="chat-widget">
+    <div class="chat-window" id="chatWindow">
+      <div class="chat-header">
+        FairPay AI Tutor
+        <button class="chat-close" onclick="toggleChat()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="chat-messages" id="chatMessages">
+        <div class="msg ai">Hello! I'm your FairPay course tutor. I've read all the materials—what would you like to
+          know about the payments ecosystem?</div>
+        <div class="typing-indicator" id="typingIndicator">Tutor is typing...</div>
+      </div>
+      <div class="chat-input-area">
+        <input type="text" class="chat-input" id="chatInput" placeholder="Ask a question..."
+          onkeypress="handleChatKey(event)">
+        <button class="chat-submit" onclick="sendChatMessage()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <button class="chat-toggle" onclick="toggleChat()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path
+          d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+        </path>
+      </svg>
+    </button>
+  </div>
+
+  <script>
+    function toggleChat() {
+      document.getElementById('chatWindow').classList.toggle('open');
+      if (document.getElementById('chatWindow').classList.contains('open')) {
+        document.getElementById('chatInput').focus();
+      }
+    }
+
+    function handleChatKey(e) {
+      if (e.key === 'Enter') {
+        sendChatMessage();
+      }
+    }
+
+    async function sendChatMessage() {
+      const input = document.getElementById('chatInput');
+      const text = input.value.trim();
+      if (!text) return;
+
+      const msgsDiv = document.getElementById('chatMessages');
+      const typing = document.getElementById('typingIndicator');
+
+      // Insert user message
+      const userMsg = document.createElement('div');
+      userMsg.className = 'msg user';
+      userMsg.textContent = text;
+      msgsDiv.insertBefore(userMsg, typing);
+
+      input.value = '';
+      msgsDiv.scrollTop = msgsDiv.scrollHeight;
+
+      // Show typing
+      typing.style.display = 'block';
+      msgsDiv.scrollTop = msgsDiv.scrollHeight;
+
+      try {
+        const res = await fetch('/api/chat', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ messages: text })
+        });
+
+        const data = await res.json();
+
+        typing.style.display = 'none';
+
+        if (data.error) {
+          throw new Error(data.error);
+        }
+
+        const aiMsg = document.createElement('div');
+        aiMsg.className = 'msg ai';
+        aiMsg.textContent = data.response || "Sorry, I couldn't generate a response.";
+        msgsDiv.insertBefore(aiMsg, typing);
+      } catch (err) {
+        typing.style.display = 'none';
+        const errorMsg = document.createElement('div');
+        errorMsg.className = 'msg ai';
+        errorMsg.style.color = 'var(--orange)';
+        errorMsg.textContent = "Error communicating with AI tutor.";
+        msgsDiv.insertBefore(errorMsg, typing);
+      }
+
+      msgsDiv.scrollTop = msgsDiv.scrollHeight;
+    }
+  </script>
 </body>
+
 </html>
