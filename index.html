@@ -1142,9 +1142,9 @@
       const file = event.target.files[0];
       if (!file) return;
 
-      // 10MB limit
-      if (file.size > 10 * 1024 * 1024) {
-        alert('File must be under 10MB');
+      // 3MB limit (Vercel serverless body limit is 4.5MB; base64 adds ~33% overhead)
+      if (file.size > 3 * 1024 * 1024) {
+        alert('File must be under 3MB. If your PDF is image-heavy, try compressing it first or converting to a text-based format.');
         event.target.value = '';
         return;
       }
@@ -1157,7 +1157,8 @@
           type: file.type || 'text/plain',
           data: base64
         };
-        document.getElementById('fileChipName').textContent = file.name;
+        const sizeMB = (file.size / (1024 * 1024)).toFixed(1);
+        document.getElementById('fileChipName').textContent = file.name + ' (' + sizeMB + 'MB)';
         document.getElementById('fileChip').classList.add('visible');
       };
       reader.readAsDataURL(file);
@@ -1227,7 +1228,9 @@
         const errorMsg = document.createElement('div');
         errorMsg.className = 'msg ai';
         errorMsg.style.color = 'var(--orange)';
-        errorMsg.textContent = "Error communicating with AI tutor.";
+        errorMsg.textContent = filePayload
+          ? "Error: the file may be too large. Try a smaller PDF (under 3MB) or paste your text directly."
+          : "Error communicating with AI tutor.";
         msgsDiv.insertBefore(errorMsg, typing);
       }
 

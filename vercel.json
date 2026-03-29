@@ -1,0 +1,8 @@
+{
+    "functions": [
+        {
+            "src": "api/chat.js",
+            "maxDuration": 60
+        }
+    ]
+}
