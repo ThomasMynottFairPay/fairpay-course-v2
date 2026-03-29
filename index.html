@@ -518,35 +518,7 @@
         </div>
       </a>
 
-      <div class="nav-divider"></div>
-      <div class="nav-section-label">Resources</div>
-
-      <a class="nav-item" href="podcast.html" target="_blank">
-        <div class="nav-num">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z" />
-            <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
-            <line x1="12" y1="19" x2="12" y2="23" />
-            <line x1="8" y1="23" x2="16" y2="23" />
-          </svg>
-        </div>
-        <div class="nav-content">
-          <div class="nav-title">Audio Summaries</div>
-          <div class="nav-meta">Podcast feed</div>
-        </div>
-      </a>
     </nav>
-
-    <div class="sidebar-footer">
-      <a href="feed.xml" class="audio-badge" target="_blank">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M4 11a9 9 0 0 1 9 9" />
-          <path d="M4 4a16 16 0 0 1 16 16" />
-          <circle cx="5" cy="19" r="1" />
-        </svg>
-        Subscribe to RSS Feed
-      </a>
-    </div>
   </aside>
 
   <!-- MOBILE HEADER -->
@@ -693,29 +665,6 @@
         </div>
       </div>
 
-      <div class="podcast-section">
-        <h2>🎧 Audio Prep Summaries</h2>
-        <p>Listen to 15-20 minute audio overviews before each week. Perfect for your commute or gym session. Subscribe
-          via your favourite podcast app.</p>
-        <div class="podcast-links">
-          <a href="feed.xml" class="podcast-link" target="_blank">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M4 11a9 9 0 0 1 9 9" />
-              <path d="M4 4a16 16 0 0 1 16 16" />
-              <circle cx="5" cy="19" r="1" />
-            </svg>
-            RSS Feed
-          </a>
-          <a href="podcast.html" class="podcast-link">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z" />
-              <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
-              <line x1="12" y1="19" x2="12" y2="23" />
-            </svg>
-            All Episodes
-          </a>
-        </div>
-      </div>
     </div>
 
     <!-- iframe for loading week content -->
@@ -760,14 +709,20 @@
         }
         if (matchedEp) {
           audioBar.classList.add('open');
+          document.getElementById('main').style.paddingTop = '82px';
           titleEl.innerText = matchedEp.title;
           if (audioEl.src !== matchedEp.audio_url) {
             audioEl.src = matchedEp.audio_url;
           }
         } else {
           audioBar.classList.remove('open');
+          document.getElementById('main').style.paddingTop = '0';
           audioEl.pause();
         }
+      } else {
+        if (audioBar) audioBar.classList.remove('open');
+        document.getElementById('main').style.paddingTop = '0';
+        if (audioEl) audioEl.pause();
       }
     }
 
@@ -798,17 +753,17 @@
   <style>
     .audio-player-fixed {
       position: fixed;
-      bottom: 0;
+      top: 0;
       left: 280px;
       right: 0;
       background: var(--bg-card);
-      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
       padding: 1rem 2rem;
       z-index: 90;
       display: none;
       align-items: center;
       gap: 1.5rem;
-      box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     }
 
     .audio-player-fixed.open {
@@ -846,6 +801,7 @@
     @media (max-width: 900px) {
       .audio-player-fixed {
         left: 0;
+        top: 56px;
         padding: 1rem;
         flex-direction: column;
         align-items: stretch;
