@@ -1,0 +1,12 @@
+{
+  "name": "fairpay-course",
+  "version": "1.0.0",
+  "description": "FairPay Course with Agentic Tutor",
+  "main": "index.js",
+  "scripts": {
+    "extract": "node scripts/extract.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.33.1"
+  }
+}
